@@ -1,5 +1,7 @@
 body {
     background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
     background-color: #ffffff;
     padding-top: 5rem;
     margin-bottom: 100px;
