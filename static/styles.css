@@ -10,8 +10,8 @@ body {
 }
 h1 {
     padding: 3rem 1.5rem;
-     text-align: center;
-     color: #333333
+    text-align: center;
+    color: #333333
 }
 
 h2 {
@@ -41,6 +41,7 @@ h6 {
 }
 
 .cover-heading {
+    text-size-adjust: 200%;
     padding-top: 200px;
     padding-bottom: 40 px;
     text-align: center;
@@ -48,8 +49,14 @@ h6 {
 }
 
 .cover-subheading {
-    padding-top: 40 px;
-    padding-bottom: 40 px;
+    text-size-adjust: 200%;
+    padding-bottom: 80 px;
     text-align: center;
-    color: #ffffff
+    color: #7a0000
+}
+
+.cover-buttons {
+    color: #0f42eb;
+    margin-right: 30px;
+    margin-left: 30px;
 }
