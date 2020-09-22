@@ -31,3 +31,25 @@ h6 {
     margin-left: 30px;
 }
 
+.cover {
+    padding: 0 1.5rem;
+}
+
+.cover .btn-lg {
+    padding: .75rem 1.25rem;
+    font-weight: 700;
+}
+
+.cover-heading {
+    padding-top: 200px;
+    padding-bottom: 40 px;
+    text-align: center;
+    color: #ffffff
+}
+
+.cover-subheading {
+    padding-top: 40 px;
+    padding-bottom: 40 px;
+    text-align: center;
+    color: #ffffff
+}
