@@ -46,10 +46,9 @@ footer {
 }
 
 .cover-heading {
-    text-size-adjust: 1000%;
+    text-size-adjust: 2000%;
     margin-top: 100px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+    margin-bottom: 20px;
     text-align: center;
     color: #ffffff;
 }
@@ -57,7 +56,7 @@ footer {
 .cover-subheading {
     text-size-adjust: 150%;
     margin-top: 0px;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
     text-align: center;
     color: #c24c1e;
 }
