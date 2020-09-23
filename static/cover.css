@@ -27,7 +27,7 @@ body {
     margin-left: 10px;
 }
 
-.cover-links {
+.cover-links:link cover-links:visited  {
     background-color: #011222; 
     border-radius: 5px;
     border: none;
@@ -35,7 +35,7 @@ body {
     text-align: center;
 }
 
-.cover-links:hover {
+.cover-links:hover,cover-links:active {
     background-color: #011f3b; 
 }
 .cover-footer a {
