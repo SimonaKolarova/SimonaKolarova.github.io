@@ -28,10 +28,15 @@ body {
 }
 
 .cover-links {
-    font-size: 20px;
-    color: #ffffff;
-    margin-right: 30px;
-    margin-left: 30px; 
+    background-color: #011222; 
+    border-radius: 5px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.cover-links:hover {
+    background-color: #011f3b; 
 }
 .cover-footer a {
     font-size-adjust: 0.3;
