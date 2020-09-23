@@ -46,15 +46,15 @@ footer {
 }
 
 .cover-heading {
-    font-size: 40px;
+    font-size: 60px;
     padding-top: 100px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     text-align: center;
     color: #ffffff;
 }
 
 .cover-subheading {
-    text-size-adjust: 150%;
+    font-size-adjust: 200%;
     padding-top: 0px;
     padding-bottom: 50px;
     text-align: center;
