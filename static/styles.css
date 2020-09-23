@@ -27,7 +27,7 @@ h6 {
 }
 
 footer {
-    text-size-adjust: 30%; 
+    font-size-adjust: 0.3; 
     color: #922900;
 }
 .buttons {
@@ -46,17 +46,17 @@ footer {
 }
 
 .cover-heading {
-    text-size-adjust: 2000%;
-    margin-top: 100px;
-    margin-bottom: 20px;
+    font-size: 40px;
+    padding-top: 100px;
+    padding-bottom: 20px;
     text-align: center;
     color: #ffffff;
 }
 
 .cover-subheading {
     text-size-adjust: 150%;
-    margin-top: 0px;
-    margin-bottom: 50px;
+    padding-top: 0px;
+    padding-bottom: 50px;
     text-align: center;
     color: #c24c1e;
 }
