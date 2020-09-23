@@ -44,15 +44,16 @@ h6 {
 .cover-heading {
     text-size-adjust: 1000%;
     margin-top: 100px;
-    margin-bottom: 0 px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     text-align: center;
     color: #ffffff
 }
 
 .cover-subheading {
     text-size-adjust: 150%;
-    margin-top: 0 px;
-    margin-bottom: 150 px;
+    margin-top: 0px;
+    margin-bottom: 150px;
     text-align: center;
     color: #c24c1e
 }
