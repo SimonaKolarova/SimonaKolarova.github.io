@@ -12,20 +12,24 @@ body {
 h1 {
     padding: 3rem 1.5rem;
     text-align: center;
-    color: #333333
+    color: #333333;
 }
 
 h2 {
     padding: 3rem 1.5rem;
     text-align: center;
-    color: #333333
+    color: #333333;
 }
 
 h6 {
     text-align: center;
-    color: #333333
+    color: #333333;
 }
 
+footer {
+    text-size-adjust: 30%; 
+    color: #922900;
+}
 .buttons {
     color: #4d4d4d;
     margin-right: 30px;
@@ -47,7 +51,7 @@ h6 {
     margin-bottom: 0px;
     padding-bottom: 0px;
     text-align: center;
-    color: #ffffff
+    color: #ffffff;
 }
 
 .cover-subheading {
@@ -55,7 +59,7 @@ h6 {
     margin-top: 0px;
     margin-bottom: 150px;
     text-align: center;
-    color: #c24c1e
+    color: #c24c1e;
 }
 
 .cover-buttons {
