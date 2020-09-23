@@ -7,6 +7,7 @@ body {
     margin-bottom: 100px;
     margin-right: 150px;
     margin-left: 80px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 h1 {
     padding: 3rem 1.5rem;
@@ -53,7 +54,7 @@ h6 {
     margin-top: 0 px;
     margin-bottom: 150 px;
     text-align: center;
-    color: #922900
+    color: #c24c1e
 }
 
 .cover-buttons {
