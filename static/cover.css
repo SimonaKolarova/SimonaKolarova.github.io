@@ -31,7 +31,7 @@ body {
     background-color: #011222; 
     border-radius: 5px;
     border: none;
-    padding: 14px 25px;
+    padding: 25px 40px;
     color: #FFFFFF;
     text-align: center;
     text-decoration: none;
@@ -39,6 +39,7 @@ body {
 
 .cover-links:hover, .cover-links:active {
     background-color: #011f3b; 
+    text-decoration: none;
 }
 .cover-footer a {
     font-size-adjust: 0.3;
