@@ -47,3 +47,11 @@
     width:40px;
     height:40px;
 }
+    
+    .grid-image.rounded {
+        border-radius: 100%;
+    }
+
+        .grid-image.rounded img {
+            border-radius: 100%;
+        }
