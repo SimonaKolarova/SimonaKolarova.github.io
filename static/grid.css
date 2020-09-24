@@ -39,21 +39,11 @@
             margin-left: 5%;
             text-align: left;
         }
-.image {
+.grid-image {
     border-radius: 4px;
-    border: 0;
+    border: solid 0.5em #cccccc;
     display: inline-block;
     position: relative;
-    width:200px;
-    height:200px;
-    overflow:hidden;
+    width:40px;
+    height:40px;
 }
-    
-    .image.rounded {
-        border-radius: 100%;
-    }
-
-        .image.rounded img {
-            border: solid 0.5em #cccccc;
-            border-radius: 100%;
-        }
