@@ -50,11 +50,11 @@
         border-radius: 100%;
         width:200px;
         height:200px;
-        overflow:hidden"
+        overflow:hidden;
     }
 
         .image.rounded img {
             border: solid 0.5em;
-            border-color: #909090;
+            border-color: #cccccc;
             border-radius: 100%;
         }
