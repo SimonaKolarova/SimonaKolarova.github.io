@@ -44,7 +44,6 @@
     border: 0;
     display: inline-block;
     position: relative;
-    overflow:hidden;
 }
     
     .grid-image.rounded {
