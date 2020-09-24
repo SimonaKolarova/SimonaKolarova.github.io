@@ -1,3 +1,7 @@
+html { 
+    min-height: 100%; position: relative; 
+}
+
 body {
     background-image: url("images/background3.jpg");
     background-repeat: no-repeat;
@@ -34,3 +38,4 @@ hr {
     margin-right: 30px;
     margin-left: 30px;
 }
+a:focus { text-decoration: none; }
