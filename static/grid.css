@@ -44,17 +44,16 @@
     border: 0;
     display: inline-block;
     position: relative;
+    width:200px;
+    height:200px;
+    overflow:hidden;
 }
     
     .image.rounded {
         border-radius: 100%;
-        width:200px;
-        height:200px;
-        overflow:hidden;
     }
 
         .image.rounded img {
-            border: solid 0.5em;
-            border-color: #cccccc;
+            border: solid 0.5em #cccccc;
             border-radius: 100%;
         }
