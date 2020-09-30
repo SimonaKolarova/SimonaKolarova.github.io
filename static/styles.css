@@ -12,6 +12,8 @@ body {
     margin-right: 150px;
     margin-left: 80px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: justify;
+    text-justify: distribute-all-lines;
 }
 h1 {
     padding: 3rem 1.5rem;

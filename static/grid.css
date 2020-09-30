@@ -15,12 +15,12 @@
         width: 50%;
     }
         .grid .block .content {
-            width: 60%;
+            width: 65%;
         }
 
         /*Image block*/
         .grid .block .grid-image {
-            width: 30%;
+            width: 25%;
         }
             .grid .block .grid-image img {
                 display: inline;
@@ -50,8 +50,8 @@
     .grid-image img {
         border-radius: 4px;
         display: block;
-        width:155px;
-        height:150px;
+        width:120px;
+        height:120px;
     }
     
     .grid-image.left, .grid-image.right {
@@ -91,10 +91,20 @@
     }
 
         .grid-image.rounded img {
-            border: solid 0.5em #dddddd;
+            border: solid 0.4em #e6e4e4;
             border-radius: 100%;
         }
 
+.grid-header {
+    color: #012647;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    background-color: #fbfcfc;
+}
+
+.grid-links:hover, .grid-links:active {
+    color: #0056a1; 
+    text-decoration: none;
 
 /* Media adjustments*/
 
