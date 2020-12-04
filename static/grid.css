@@ -13,6 +13,7 @@
         float: left;
         margin-bottom: 3em;
         width: 50%;
+        padding-bottom:1rem;
     }
         .grid .block .content {
             width: 65%;
@@ -91,7 +92,7 @@
     }
 
         .grid-image.rounded img {
-            border: solid 0.4em #e6e4e4;
+            border: solid 0.35em #ebebeb;
             border-radius: 100%;
         }
 
@@ -100,11 +101,19 @@
     text-decoration: none;
     border-bottom: 1px solid #eee;
     background-color: #fbfcfc;
+    font-size: 1.2rem;
+
 }
 
 .grid-links:hover, .grid-links:active {
     color: #0056a1; 
     text-decoration: none;
+
+} 
+.grid-description {
+    font-size:0.9rem;
+    line-height: 1.8;
+}
 
 /* Media adjustments*/
 

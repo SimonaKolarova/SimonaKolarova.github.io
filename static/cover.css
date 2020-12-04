@@ -1,49 +1,44 @@
 body {
-    background-image: url("images/cover1.jpg");
+    background-image: url("images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover; 
-    background-color: #011222;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-.cover-heading {
-    font-size: 70px;
-    padding-top: 100px;
-    padding-bottom: 5px;
-    text-align: center;
-    color: #ffffff;
+    background-color: #f7f7f7;
+    font-family: Tahoma, Geneva, sans-serif;
 }
 
-.cover-subheading {
-    font-size: 30px;
-    padding-top: 0px;
-    padding-bottom: 100px;
+.cover-heading {
+    font-size: 4.5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 2rem;
     text-align: center;
-    color: #c24c1e;
+    color: #14365f;
 }
 
 .cover-buttons {
-    color: #1293fc;
-    margin-right: 10px;
-    margin-left: 10px;
+    color: #777777;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .cover-links:link, .cover-links:visited  {
-    background-color: #011222; 
-    border-radius: 5px;
-    border: none;
-    padding: 7px 15px;
-    margin-left:2px;
-    font-size: 20px;
-    color: #FFFFFF;
+    background-color: #ffffff; 
+    border-radius: 0px;
+    border: 1px solid;
+    border-color: #aaaaaa;
+    padding: 0.5rem 2rem;
+    margin-left:0.3rem;
+    color: #14365f;
+    font-size: 1.2rem;
     text-align: center;
     text-decoration: none;
 }
 
 .cover-links:hover, .cover-links:active {
-    background-color: #011f3b; 
+    background-color: #bbbbbb; 
     text-decoration: none;
 }
 .cover-footer a {
-    font-size-adjust: 0.3;
-    color: #922900;
+    font-size: 0.6rem;
+    color: #646464;
+
   }
