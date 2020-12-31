@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!--Imports-->
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="static/projects.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/7e4ef2c42c.js" crossorigin="anonymous"></script>
+        
+        <!--Title-->
+        <title>SK Project: Mechanism of action</title>
+    </head>
+    <body data-spy="scroll" data-offset="70">
+         <!--Side NavBar-->
+        <nav id="navbar-scrollspy" class="navbar navbar-light bg-light flex-column nav-pills sidenav">
+            <a class="navbar-brand" href="index.html">SIMONA KOLAROVA</a>
+            <a class="navbar-brand" href="#item-0">Mechanism of Action <br> Prediction</a>
+            <nav class="nav nav-pills flex-column">
+                <a class="nav-link nav-link-large" href="#item-1">Background</a>
+                <a class="nav-link nav-link-large" href="#item-2">Dataset - understanding and visualisation</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-1">Data splitting</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-2">Experimental conditions</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-3">Gene expression</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-4">Cell viability</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-5">Mechanism of Action</a>
+                </nav>
+                <a class="nav-link nav-link-large" href="#item-3">Exploratory data analysis</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-1">Relationships between features</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-2">Relationships between features and targets</a>
+                </nav>
+                <a class="nav-link nav-link-large" href="#item-4">Principal component analysis</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-1">Gene expression</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-2">Cell viability</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-3">Feature cross-correlation</a>
+
+                </nav>
+                <a class="nav-link nav-link-large" href="#item-5">Predictive modelling</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-1">Model training</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-2">Model evaluation</a>
+                </nav>
+            </nav>
+        </nav>
+
+        <!--Scrollspy-->
+        <div data-spy="scroll" data-target="#navbar-scrollspy" data-offset="0" style = "margin-left: 14rem;">
+        
+        <!--Title-->
+        <h1 id ="item-0">Mechanisms of Action (MoA) Prediction</h1>
+        
+        <!--Introduction-->
+        <h2 id="item-1">Background</h2>
+            <p>
+                Understanding the mechanism of action (MoA) of drug candidates is becoming increasingly important in the process of drug discovery. 
+                To determine the MoA of newly-developed therapeutics, cell-based assays that measure gene expression and cell viability upon drug exposure are commonly employed in combination with large databases of known drug/cellular responses/MoA correlations. 
+                Predicting the MoA of drug candidates from such data requires robust data analysis and machine learning approaches. 
+            </p>
+            <p>
+                In search of such approaches, the 
+                <a href="http://lish.harvard.edu/" target="_blank">Laboratory for Innovation Science at Harvard</a> (LISH), 
+                <a href="https://clue.io/" target="_blank">Connectivity Map</a> 
+                (a project within the Broad Institute of MIT and Harvard) and the
+                <a href="https://lincsproject.org/" target="_blank">NIH Common Funds Library of Integrated Network-Based Cellular Signatures</a> (LINCS) 
+                recently made a large multi-label dataset of cellular responses and MoA
+                <a href="https://www.kaggle.com/c/lish-moa" target="_blank">publicly available</a>.
+            </p>
+        <!--Section 2-->
+        <h2 id = "item-2">Dataset - understanding and visualisation</h2>
+        <table>
+            <tr>
+                <td class = "two-columns-left">
+                    <p>
+                        The dataset for this project maps the cellular responses (gene expression and cell viability) of 100 cell lines 
+                        to more than 3000 drugs (at different doses and exposure times) 
+                        and provides a multi-label classification for the drugs' mechanism of action (MoA).
+                    </p>
+                    <a href= "https://www.kaggle.com/c/lish-moa/data" target= "_blank"><i class="fas fa-database"></i> Dataset</a> &nbsp;&nbsp;&nbsp;
+                    <a href = "https://github.com/SimonaKolarova/Drug-s-Mechanism-of-action/blob/main/Data%20-%20understanding%20and%20visualisation.ipynb" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>
+                   
+                    <h3 id = "item-2-1">Data splitting</h3>
+                    <p>
+                        The dataset was split into a training and testing subset by the dataset providers. 
+                        The training subset contained 23816 datapoints, while the testing subset had 3982 datapoints and the mechanism of action (MoA) data was omitted.
+                    </p>
+                </td>
+                <td class = "two-columns-right"> 
+                    <img src="static/projects/MoA/dataset.png"  width="300rem">
+                </td>   
+            </tr>
+        </table>       
+
+        <h3 id = "item-2-2">Experimental conditions</h3>
+            <p><u>Treatment type:</u>
+                Cells were either treated with a compound of interest (denoted as 'trt_cp') or with a control perturbation (denoted as 'ctl_vehicle', control perturbations have no MoAs). 
+                Information about the drugs used was not provided in the dataset.
+            </p>
+            <p><u>Drug dosage:</u>
+                The drug dose ('cp_dose') was also varied across the dataset with a high ('D1') and a low ('D2') dose (undisclosed quantities) employed for each compound of interest. 
+            </p>
+            <p><u>Exposure time:</u>
+                The duration of the treatment ('cp_time') was either 24, 48 or 72 hours and each timespan was employed for each drug. 
+            </p>
+            <p>Overall, each compound of interest was, therefore, used to treat cell lines under 6 different conditions (2 varying doses x 3 varying exposure time). All measurements were carried out in duplicate and the cell response values were averaged over the two treatments.</p>
+            <p>Importantly, the distribution of samples treated under different treatment conditions was comparable across the training and testing datasets (as shown in the sunburst charts below).</p>
+            <table style = "margin-left: 5rem">
+                <tr>
+                    <td class="two-columns-left-half">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/ec_train.html", height = "400rem">
+                    </td>
+                    <td class="two-columns-right-half">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/ec_test.html", height = "400rem">
+                    </td>
+                </tr>
+            </table>
+
+        <h3 id = "item-2-3">Gene expressions</h3>
+            <p><u>Data collection:</u>
+                Gene expression data for <b>772 genes</b> was collected using a modified version of the
+                <a href="https://clue.io/connectopedia/what_is_l1000" target="_blank">L1000 assay</a>. 
+                The L1000 assay is a high-throughput gene expression assay that measures the mRNA transcript abundance of "landmark" genes from human cells.
+                <i>i.e.</i>, genes that are a highly representative subset of the transcriptome. 
+                All data was normilized using a quatile normalization followed by a robust z-score normalization.
+                Gene names were obfuscated by the dataset providers and, instead, genes are labelled as g-0 through g-771.
+            </p>
+            <table>
+                <tr>
+                    <td class = "two-columns-left-half">
+                        <p><u>Data distrubution:</u>
+                        The gene expressions data (18'384'441 datapoints) is symetrically distributed and centered around zero
+                        (Q1 = -0.492, Q2 = 0.000, Q3 = 0.507). Hence, no additional normalization steps will be used to preprocess the gene expressions data prior to machine learning model construction.</p>
+                        <embed type="text/html" class="plots" src="static/projects/MoA/gene_expressions.html", height = "320">
+                        <p style= "font-size: 0.7rem;">* 1'000'000 datapoints plotted to avoid page loading isssues - data is representative of the whole dataset.</p>
+                    </td>
+                    <td class = "two-columns-right-half">
+                        <p><u>Cross-correlations:</u>
+                            The cross-correlation between all pairs of gene expressions in the dataset was calculated.
+                            The majority of correlation coefficients (~63%) were lower than |0.2|, while only ~11% were higher than |0.6| and ~1% were higher than |0.8|.
+                        </p>
+                        <p>This suggests limited correlation between the over- or underexpression of different genes upon drug exposure, 
+                            thereby indicating that it is unlikely that the recorded correlations will pose a significant issue in machine learning model development. 
+                            Nevertheless, a <a href="#item-4-1">principal component analysis (PCA)</a> is performed below to further investigate this notion and to potentially reduce the gene expression features count.</p>
+                        <embed type="text/html" class="plots" src="static/projects/MoA/ge_correlations.html", height = "320">
+                    </td>   
+                </tr>
+            </table>
+            
+        <h3 id = "item-2-4">Cell viability</h3>   
+            <p><u>Data collection:</u>
+                Cell viability was assessed for <b>100 cell lines</b> using the 
+                <a href="https://www.luminexcorp.com/blog/prism-a-novel-bead-based-biological-barcode-assay/" target="_blank">Profiling Relative Inhibition Simultaneously in Mixture (PRISM)</a> technique. 
+                PRISM is a high-throughput assay, in which cells (typically cancer cell lines) are labelled with a unique 24-nucleotide barcodes, pooled and treated together under the experimental conditions of interest, <i>e.g.</i>, treatment type, drug dose, time. 
+                Genomic DNA is then isolated from the surviving cells and quatified to determine the surving cells count.
+                All data was normilized using a quatile normalization followed by a robust z-score normalization.
+                Cell line names were obfuscated by the dataset providers and, instead, cell lines are labelled as c-0 through c-99.
+            </p>
+            <table>
+                <tr>
+                    <td class = "two-columns-left-half">
+                        <p><u>Data distrubution:</u>
+                        Similarly to the gene expression data, the cell viability data (2'381'400 datapoints) was also <i>predominantly</i> normally distributed and centered around zero
+                        (Q1 = -0.561, Q2 = -0.005, Q3 = 0.456). However, as can be seen in the histogram below, a notable tail at values around -10 was present. 
+                        This negative tail feature persists in the cell viability histograms of the majority of the 100 cell lines (when plotted individually, data not shown) and appears genuine. 
+                        As a consequence of this imbalance, the mean cell viability value is shifted towards negative values (-0.432) compared to the median (-0.005).
+                        </p>
+                        <p>Nevertheless, as the data was normalized by the dataset providers and because this negative tail might provide valuable insight during the data modelling step, 
+                        no additional normalization steps will be used to preprocess the gene expressions data prior to machine learning model construction.</p>
+                        <embed type="text/html" class="plots" src="static/projects/MoA/cell_viabilities.html", height = "320">
+                    </td>
+                    <td class = "two-columns-right-half">
+                        <p><u>Cross-correlations:</u>
+                            The cross-correlation between all pairs of cell viability features in the dataset was calculated. 
+                            There appears to be significant possitive correlation between all pairs of cell viability variables 
+                            with the corresponding correlation coefficients ranging between 0.612 and 0.923.</p> 
+                            <p>This implies that the same treatment conditions (<i>i.e.</i>, treatment type, dose and time) have a similar effect on the viability of different cell lines.
+                            Therefore, a <a href="#item-4-2">principal component analysis (PCA)</a> of this set of features is performed below.</p>
+                        <img src="static/projects/MoA/cv_corr_matrix.png", height = "450rem">
+                    </td>   
+                </tr>
+            </table>
+
+        <h3 id = "item-2-5">Mechanism of action</h3>
+        <p> 
+            The mechanism of action (MoA) of each experimental treatment was determined by the dataset providers based on the available literature and cell response data.             
+            The compiled MoA data was provided for all treatments in the training dataset, however, it was not made publicaly available for the testing dataset (as the purpose of the dataset competition is to predict the testing dataset MoAs).             
+            <b>206 mechanisms of action (MoAs)</b> were included in the dataset and experimental treatments were labelled with a 1 (treatment has specified MoA) or 0 (treatment does not have specified MoA) for each MoA.
+        </p>
+        
+        <table>
+            <tr>
+                <td class = "two-columns-left">
+                    <p><u>Number of MoA per treatment:</u>
+                        As mentioned above, cells were either treated with a compound ('trt_cp') or with a control ('ctl_vehicle') perturbation. 
+                        Drugs can elicite a cellular response (change in gene expression or cell viability) <i>via</i> multiple MoA or, indeed, have no MoA for the treated cell lines, whereas all control treatments have no MoA.
+                    </p>
+                    <p>In this dataset, the majority of drugs (~57%) had one MoA, followed by drugs with no MoA (~34%) and drugs with 2 or more MoAs (~9%). 
+                        The lack of MoAs for all control treatments was confirmed.
+                    </p> 
+                </td>
+                <td width = "450rem" class = "two-columns-right">
+                    <embed type="text/html" class="plots" src="static/projects/MoA/Number of MoAs per drug.html", height = "370rem">
+                </td>   
+            </tr>
+        </table>
+        <p><u>Number of treatments eliciting each MoA:</u> 
+            To gain further understanding of the MoA data distribution, the number of perturbations that elicited each of the 206 MoAs was also examined. 
+        </p>    
+        <p>
+            The majority of MoA (50.5%) were each elicited by a relatively small number of treatments, <i>i.e.</i>, less than 40, whereas only a handfull of MoAs were elicited by more than 400 different treatments (total training dataset perturbation = 23816). 
+            Hence, the outcome data in the dataset (MoA) is highly imbalanced, which may hinder the prediction of MoA for unseen drugs, especially for MoA classes that are underrepresented in the training dataset (<i>e.g.</i>, the thrombin inhibitory MoA, which is only elicited by one treatment in the training dataset). 
+        </p>
+        <table>
+            <tr>
+                <td width = "280 rem" class = "two-columns-left">
+                    <embed type="text/html" class="plots" src="static/projects/MoA/Violin plot (MoAs).html", height = "330rem">
+                </td>
+                <td  width = "630 rem" class = "two-columns-right">
+                    <embed type="text/html" class="plots" src="static/projects/MoA/Histogram (MoAs).html", height = "330rem">
+                </td>   
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class = "two-columns-left">
+                    <p><u>Types of MoAs:</u> 
+                        To gain understanding of the types of MoA included in the dataset, the Natural language processing toolkit (NLTK) was used to determine the frequency of the different terms used to describe the various mechanisms of action. 
+                        The 18 most common terms (<i>i.e.</i>, terms of frequency higher than 2) are shown in the bar chart on the right. 
+                        Interestingly, the majority of MoAs (54.4%) were inhibitors.  
+                    </p>
+                </td>
+                <td  width = "630 rem" class = "two-columns-right">
+                    <embed type="text/html" class="plots" src="static/projects/MoA/Term frequency (MoAs).html", height = "340rem">
+                </td>   
+            </tr>
+        </table>
+        <h2 id = "item-3">Exporatory data analysis</h2>
+            <p>
+                Now that the experimental conditions, gene expression, cell viability and mechanism of action data have been individually explored, 
+                the relationships between these data will be investigated to gain further understanding of the dataset. 
+                Specifically, the relationships between the different features (<i>i.e.</i>, experimental conditions, gene expression and cell viability) in the training and testing data
+                and the relationships between these features and the targets (<i>i.e.</i>, mechanism of action) in the training data will be analysed.
+            </p>
+            <a href = "https://github.com/SimonaKolarova/Drug-s-Mechanism-of-action/blob/main/Exploratory%20data%20analysis.ipynb" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>           
+            <h3 id = "item-3-1">Relationships between features</h3>
+            <p><u>Relationship between experimental conditions and gene expression:</u> 
+                To understand whether the experimental conditions (<i>i.e</i>, treatment type, dosage and time) are correlated with differences in overall gene expression, the violin plots below were used. 
+                The plots suggests that: 
+            </p>
+            <p>- The distribution of gene expressions for cell lines treated with control perturbations ('ctl_vehicle') or treatment perturbations ('trt_cp') are comparable. 
+                Notably, however, the gene expression values for treatment perturbations are centered slightly more thighly around the median (0.000) with a Q1 of -0.488 and a Q3 of 0.502 compared to the cotrol perturbations (median = 0.010, Q1 = -0.528, Q3 = 0.560).
+            </p>
+            <p>- The distribution of gene expressions for cell lines treated with high dose perturbations ('D1') or low dose perturbations ('D2') are very similar with no notable differences. 
+            </p>
+            <p>- Simiarly, the distribution of gene expressions for cell lines treated for 24 hours ('24'), 48 hours ('48') or 72 hours ('72') are also comparable with no notable differences. 
+            </p>
+            <table>
+                <tr>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/treatments-ge.html", height = "440rem">
+                    </td>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/dose-ge.html", height = "440rem">
+                    </td>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/time-ge.html", height = "440rem">
+                    </td>
+                </tr>
+            </table>
+            <p style= "font-size: 0.7rem;">* 500'000 gene expressions plotted for each perturbation to avoid page loading isssues - data is representative of the whole set.</p>
+            <p><u>Relationship between experimental conditions and cell viability:</u> 
+                To understand whether the experimental conditions (<i>i.e</i>, treatment type, dosage and time) are correlated with differences in overall cell viability, the violin plots below were used. 
+                The plots suggests that: 
+            </p>
+            <p>- There are small but notable differences in the cell viability distribution for cell lines treated with control perturbations ('ctl_vehicle') <i>vs.</i> treatment perturbations ('trt_cp'). 
+                Specifically, the mean, median and maximum cell viability for cell lines treated with drugs were significantly lowered (by ~0.5 on avearage) when compared to cell lines treated with control perturbations.
+                This suggests that, generally, drug treatments can be attributed with a decrease in the number of cells, which survive a treatment.
+            </p>
+            <p>- The cell viabilities for cell lines treated with high ('D1') or low ('D2') drug doses are also comparable with the main differences between the two sets of data observed in the corresponding histogram negative tail region 
+                (discussed in the <a href="#item-2-4">cell viability</a> section above). 
+               Specifically, an increase in the drug dose appears to be correlated with an increase in the negative tail region count and a small decrease in the mean and maximum cell viability (~0.2 on average).
+               This suggests that, generally, an increase in drug dose can be attributed with a decrease in the number of cells, which survive a treatment.
+            </p>
+            <p>- Similarly to the dose response data, the differences in cell viabilities for cell lines treated for 24, 48 or 72 hours are predominantly concentrated in the histogram negative tail region.
+                Specifically, an increase in the treatment type appears to be correlated with an increase in the negative tail region count and a small decrease in the mean and maximum cell viabilities (~0.4 per 24 hours on average).
+                This suggests that, generally, an increase in treatment time can be attributed with a decrease in the number of cells, which survive a treatment.
+            </p>
+            <table>
+                <tr>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/treatments-cv.html", height = "440rem">
+                    </td>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/dose-cv.html", height = "440rem">
+                    </td>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/time-cv.html", height = "440rem">
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class = "two-columns-left">
+                        <p><u>Correlations between gene expression and cell viability:</u> 
+                            The correlations between all pairs of gene expression and cell viability variables in the dataset were calculated and plotted on the histogram on the right. 
+                            The majority of correlation coefficients (~57%) were lower than |0.4|, however, ~27% were higher than |0.6| and ~15% were higher than |0.8|.
+                        </p> 
+                        <p>                            
+                            This suggest significant correlations between some gene expression and cell viability features, which needs to be considered during the following feature reduction and machine learning steps.
+                            Interestingly, the correlations do not appear to be directional, <i>i.e.</i>, increased expression of a gene might be correlated with either a higher or a lower cell viability and <i>vice versa</i>.
+                        </p>
+                    </td>
+                    <td  width = "450 rem" class = "two-columns-right">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/ge_cv_correlations.html", height = "340rem">
+                    </td>
+                </tr>
+            </table>
+
+            <h3 id = "item-3-2">Relationships between features and targets</h3>
+            <p>Next, the relationships between the features (<i>i.e.</i>, experimental conditions, gene expression and cell viability) and the targets (<i>i.e.</i>, mechanisms of action, MoAs) was briefly investigated. 
+                For simplicity, the MoAs data was summarised as the total number of MoA  per treatment (0, 1 or > 2).
+            </p>
+            <p><u>Relationship between experimental conditions and number of MoAs:</u> 
+                To understand whether the experimental conditions (i.e, treatment type, dosage and time) are correlated with differences in the number of MoAs per treatment perturbation, the bar charts below were used. The plots suggests that:
+            </p>
+            <p>- As discussed in the <a href="#item-2-5">initial MoA data analysis</a> section, control perturbations ('ctr_vehicle') have no MoA, whereas treatments ('trt_cp') can have none, one, or more MoAs. 
+                Hence, the treatment type ('cp_type') feature is expected to be important for the identification of experimental treatments which have no MoAs (<i>i.e.</i> control perturbations) in the following predictive modeling of the dataset.
+            </p>
+            <p>- Neither the treatment dose ('cp_dose'), nor treatment time ('cp_time') appear to have a significant effect on the distribution of MoAs within the dataset. 
+                This suggests that MoAs are primarily determined by the type of drug used, and less so by other experimental conditions and hence, these features might be less important for modelling of the data.
+            </p>
+            <table>
+                <tr>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/Type-MoAs.html", height = "440rem">
+                    </td>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/Dose-MoAs.html", height = "440rem">
+                    </td>
+                    <td width = "33%">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/Time-MoAs.html", height = "440rem">
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class = "two-columns-left">
+                        <p><u>Relationship between gene expressions and number of MoAs:</u> 
+                            Next, I investigated whether there are any significant differences in the distribution of gene expression values for treatments with zero, one or more mechanisms of action (violin plots on the right). 
+                        </p>
+                        <p>
+                            The plots suggest that the gene expressions for treatments with zero and one MoAs are comparably distributed (mean = 0.009  &#177; 0.001, median = 0.000  &#177; 0.000, Q1 = -0.476 &#177; 0.003 and Q3 of 0.491 &#177; 0.005).
+                            The range of gene expression values for treatments elucidation two or more MoAs also has the same mean and median values, however, they exhibit a notably broader distribution around zero (Q1 = -0.783, Q3 = 0.795).
+                            Hence, treatments eliciting a stronger cell response appear to also be more likely to have more than one MoA. 
+                        </p>
+                    </td>
+                    <td  width = "450 rem" class = "two-columns-right">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/Ge-MoAs.html", height = "440rem">
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class = "two-columns-left">
+                        <p><u>Relationship between cell viabilities and number of MoAs:</u> 
+                            Lastly, the cell viability distribution for treatments eliciting different number of MoAs was examined (violin plots on the right).
+                        </p>
+                        <p>
+                            Similarly to the above, the plots suggest that the cell viabilities for treatments with zero and one MoAs are comparably distributed (mean = -0.180  &#177; 0.055, median = 0.027  &#177; 0.031, Q1 = -0.487 &#177; 0.045 and Q3 of 0.476 &#177; 0.024) 
+                            with one notable difference between the two sets of data - the maximum recorded cell viability value is higher for treatments with zero MoAs than for treatments with one MoA. 
+                            However, the cell viabilities distribution for treatments with two or more MoAs is significantly shifted towards more negative values (mean = -3.255 and median = -0.766) and has a notable peak at values around -10.
+                            These observations support the above deduction that treatments eliciting a stronger cell response appear to also be more likely to have more than one MoA.
+                        </p>
+                    </td>
+                    <td  width = "450 rem" class = "two-columns-right">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/CV-MoAs.html", height = "440rem">
+                    </td>
+                </tr>
+            </table>
+
+            <h2 id = "item-4">Principal component analysis</h2>
+            <a href = "https://github.com/SimonaKolarova/Drug-s-Mechanism-of-action/blob/main/Principal%20component%20analysis.ipynb" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>           
+
+            <h3 id = "item-4-1">Gene expression</h3>
+            <p>First, principal component analysis (PCA) was performed on all 772 gene expressions. </p>
+
+            <p><u>Scree plot:</u> 
+                The 772 principal components (PCs) obtained accounted for a total of 90.2% of the variation in the training dataset gene expressions. 
+                Of these PCs, the first PC (PC1) explained ~30% of the variation, while the next 278 components incrementally increased the explained variation before a plateau was reached at PC279.
+                The last 493 PC did not significantly increase the explained gene expression data variation and are, hence, largely ommited from the scree plot below. 
+            </p>
+            <p>
+                Both the relatively small proportions of variation explained by the first PC and by all PCs overall reflect the low cross-correlation between gene expression features in the training dataset
+                (discussed <a href= "#item-2-3">above</a>). 
+            </p>
+            <p> Overall, the PCA provides a large reduction in the dimensionality of the gene expression data (from 772 to 279), which could be benefitial for the development of smaller, quicker and less prone to overfitting predictive models. 
+                However, nearly 10% of the gene expression variation is not accounted for by the 279 top PCs, which could decrease the accuracy of predictive models built using these PCs, especially if the variation ommited is important for predicting underrepresented MoAs. 
+                Hence, I will not be replacing the gene expression data with these principal components during predictive model development.
+            </p>
+            <embed type="text/html" class="plots" src="static/projects/MoA/PCA_scree_ge.html", height = "440rem">
+            
+            <p><u>Scatterplot matrix:</u> 
+                To gauge whether the first 5 gene expression PCs can cluster the data based on the total number of MoAs per treatment, the scatterplot matrix below was used.
+            </p>
+            <p>    
+                As can be seen in the plot, some separation between the different clusters was offered (especially by PC1). 
+                Specifically, some of the data for treatments with 2 or more MoAs was clustered towards higher PC1 values (>50), while some of the data for treatments without MoAs was clusters around PC1 = 30-50. 
+                Nevertheless, there is significant overlap between treatments with 0, 1 or > 2 MoAs of action (PC1 ~ 0). 
+                PC2 also offered some separation between the different MoAs sum clusters. Again, clusters of some of the treatments with 2 or more MoAs were slighly separated from the rest of the data.
+            </p>
+            <p>
+                Overall, the observed clustering by PCs is reflective of the relationship between gene expression data distribution and number of MoA (discussed <a href= "#item-3-2">above</a>, where gene expression data for treatments with 2 or more MoAs was found to have a slighly different distribution than that for treatments with 0 or 1 MoAs).
+            </p>
+            <embed type="text/html" class="plots" src="static/projects/MoA/Scatterplot_PCA_GE.html", height = "840rem">
+
+            <h3 id = "item-4-2">Cell viability</h3>
+            <p>Next, principal component analysis (PCA) was performed on all 100 cell viabilities. </p>
+
+            <p><u>Scree plot:</u> 
+                The 100 principal components (PCs) obtained accounted for a total of 99.7% of the variation in the training dataset gene expressions. 
+                Of these PCs, the first PC (PC1) explained ~85% of the variation, while the majority of the remaining components (<i>i.e.</i>, 96 out of 99 PCs) incrementally increased the explained variation 
+                with only the last 3 PCs being located in the plateau region.
+            </p>
+            <p>
+                Both the relatively high proportions of variation explained by the first PC and by all PCs overall reflect the high cross-correlation between cell viability features in the training dataset
+                (discussed <a href= "#item-2-4">above</a>). 
+            </p>
+            <p> Overall, the PCA provides a very small reduction in the dimensionality of the gene expression data (from 100 to 97), 
+                however, it accounts for most of the variation in the cell viability data and offers a potentially useful PC, <i>i.e.</i>, PC1, which explains a significant proportion of the variation in the data on its own. 
+                Hence, I will be replacing the cell viability data with these 97 principal components for the predictive model development step.
+            </p>
+            <embed type="text/html" class="plots" src="static/projects/MoA/PCA_scree_cv.html", height = "440rem">
+            
+            <p><u>Scatterplot matrix:</u> 
+                To gauge whether the first 5 cell viability PCs can cluster MoA data based on the total number of MoAs per treatment, the scatterplot matrix below was used.
+            </p>
+            <p>    
+                As can be seen in the plot, limited separation between the different clusters was offered.
+                Similarly to the gene expression PCs, the first PC offered the best separation between clusters 
+                and some treatments with 2 or more MoAs were separated well from other treatments. 
+                Nevertheless, there is significant overlap between treatments with 0, 1 or > 2 MoAs of action clustered using all PC combinations. 
+            <p>
+                Overall, the observed clustering by these PCs is reflective of the relationship between cell viability data distribution and number of MoA 
+                (discussed <a href= "#item-3-2">above</a>, where cell viability data for treatments with 2 or more MoAs was found to have a notably different distribution than that for treatments with 0 or 1 MoAs).
+            </p>
+            <embed type="text/html" class="plots" src="static/projects/MoA/Scatterplot_PCA_CV.html", height = "840rem">
+
+            <h3 id = "item-4-3">Cross-correlation between selected features</h3>
+            <table>
+                <tr>
+                    <td class = "two-columns-left">
+                        <p>
+                            Lastly, in the <a hred="#item-3-2">previous section</a>, I noted that significant cross-correlation is present between the gene expression and cell viability features in the training dataset, which could pose an issue during predictive model development.
+                            In this subsection, I investigate whether a similar issue is present in the training data after PCA for the cell viability features is performed.
+                        </p>
+                        <p>
+                            As discussed <a hred="#item-4-1">above</a>, the principal components for the gene expression data could only account for ~90% of the data variation and, hence, will not be employed for predictive modelling. 
+                            Conversely, the <a hred="#item-4-2">cell viability PCA</a> offered some potential advantages and the first 97 PCs were selected for further data modelling. 
+                        </p>
+                        <p> 
+                            The correlations between all pairs of gene expression features and selected cell viability PCs in the dataset were calculated and plotted on the histogram on the right. 
+                            The vast majority of correlation coefficients (~99%) were lower than |0.2|, while only ~0.3% were higher than |0.6| and ~0.2% were higher than |0.8|.
+                        </p> 
+                        <p>                            
+                            This suggest little correlations between the gene expression features and cell viability PCs, which is preferable for machine learning model development. 
+                            Hence, this combanation of training data features was carried forwards in model development. 
+                        </p>
+                    </td>
+                    <td  width = "450 rem" class = "two-columns-right">
+                        <embed type="text/html" class="plots" src="static/projects/MoA/ge_pca_cv_correlations.html", height = "340rem">
+                    </td>
+                </tr>
+            </table>
+            <h2 id = "item-5">Predictive modelling</h2>
+            <p>
+                Finally, in this section, the training dataset of experimental conditions, cell responses and mechanisms of actions is utilised in the development of a machine learning model for the prediction of MoAs.
+            </p>
+            <a href = "https://www.kaggle.com/simonakolarova/moa-predictions?scriptVersionId=50677570" target= "_blank"><i class="fas fa-code"></i> Kaggle Notebook for this section</a>
+
+            <h3 id = "item-5-1">Model training</h3>
+            <table>
+                <tr>
+                    <td class = "two-columns-left-half">
+                    <p><u>Neural network model structure:</u>
+                        A sequential neural network (NN) model was constructed using 
+                        <a href = "https://www.tensorflow.org/guide/keras/sequential_model" target= "_blank">TensorFlow Keras</a> 
+                        with the model structure shown on the right.
+                        The model was compiled using an "adam" optimiser with a learning rate of 0.0001 and a binary crossentropy loss. 
+                        The total number of model parameters in the NN model was 1'540'409, of which 770'756 were trainable and 69'653 were non-trainable.
+                    </p>
+                    <p><u>Cross-validation:</u>
+                        To reduce any potential training data overfitting during model development, a 5-fold cross-validation 
+                        (<a href = "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html">scikit-learn library</a>) 
+                        was employed. 
+                    </p>
+                    <p><u>Model-fitting:</u>
+                        Ten NN models with the described structure were trained on the training dataset. 
+                        For the purpose, the dataset was sliced into 128 batches and the models
+                        were trained on the data by iterating over the entire dataset for 10 "epochs".
+                    </p>
+                    <p><u>Learning reductions:</u>
+                        A learning-rate reduction (<i>i.e.</i>, <a href = "https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau" target = "_blank">'ReduceLROnPlateau'</a>)
+                        was used to reduce the learning rate 10-fold once the learning stagnated (<i>i.e.</i>, the reduction in log loss became smaller than 0.00001 per epoch after the first 5 epoch).
+                        Additionally, training was stopped early using 
+                        <a href = "https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/EarlyStopping" target="_blank">'EarlyStopping'</a> 
+                        if the log loss for the model has stopped decreasing after the first 5 epochs.
+                        Together, these training reductions ensured reasonable learning time for the model (~ 7 minutes in total).
+                    </p>
+                </td>
+                <td class = "two-columns-right-half">
+                    <table class = "model-table">
+                        <tr>
+                            <th class = "model-td-th">Layer (type)</th>
+                            <th class = "model-td-th">Output shape</th>
+                            <th class = "model-td-th">Parameters (number)</th>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Input layer</td>
+                            <td class = "model-td-th">(None, 872)</td>
+                            <td class = "model-td-th">0</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Batch normalization layer</td>
+                            <td class = "model-td-th">(None, 872)</td>
+                            <td class = "model-td-th">3488</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Droupout layer <br>(dropout rate = 0.2)</td>
+                            <td class = "model-td-th">(None, 872)</td>
+                            <td class = "model-td-th">0</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Weight normalized dense layer<br> (600 neurons, activation = "relu")</td>
+                            <td class = "model-td-th">(None, 600)</td>
+                            <td class = "model-td-th">1048201</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Batch normalization layer</td>
+                            <td class = "model-td-th">(None, 600)</td>
+                            <td class = "model-td-th">2400</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Droupout layer <br>(dropout rate = 0.3)</td>
+                            <td class = "model-td-th">(None, 600)</td>
+                            <td class = "model-td-th">0</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Weight normalized dense layer<br> (300 neurons, activation = "relu")</td>
+                            <td class = "model-td-th">(None, 300)</td>
+                            <td class = "model-td-th">360901</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Batch normalization layer</td>
+                            <td class = "model-td-th">(None, 300)</td>
+                            <td class = "model-td-th">1200</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Droupout layer <br>(dropout rate = 0.3)</td>
+                            <td class = "model-td-th">(None, 300)</td>
+                            <td class = "model-td-th">0</td>
+                        </tr>
+                        <tr>
+                            <td class = "model-td-th">Weight normalized dense output layer<br> (206 neurons, activation = "sigmoid")</td>
+                            <td class = "model-td-th">(None, 206)</td>
+                            <td class = "model-td-th">124219</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <h3 id = "item-5-2">Model evaluation</h3>
+        <p><u>Performance metric:</u>
+            As per the 
+            <a href="https://www.kaggle.com/c/lish-moa/overview/evaluation" target="_blank">specifications of the dataset providers</a>, 
+            the log loss metric was used to assess the performance of the models.                         
+        </p>
+        <p><u>Predictions averaging:</u>
+            The mechanism of actions 'targets' data was predicted using each of the 10 NN models for both the training and testing datasets
+            and the predictions for each of the datasets were averaged over the 10 models.
+        </p>
+        <p><u>Overall model performance:</u>
+            The log loss for the training dataset was <b>~0.011</b>, while that for the testing dataset was <b>~0.019</b>. 
+            These results suggest potential training data overfitting, which could be interesting to investigate and improve upon in the future. 
+            For comparison, the log loss for the testing dataset of the 
+            <a href="https://www.kaggle.com/c/lish-moa/leaderboard" target="_blank">winning submissions for the problem on Kaggle</a> is ~0.016
+        </p>
+
+        <h3 id = "item-5-3">Features importance</h3>
+
+    </div>
+    </body>
+</html>
