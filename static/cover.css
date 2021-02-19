@@ -20,6 +20,12 @@ body {
     margin-left: 0.5rem;
 }
 
+.cover-buttons:hover {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+}
+
 .cover-links:link, .cover-links:visited  {
     background-color: #ffffff; 
     border-radius: 0px;

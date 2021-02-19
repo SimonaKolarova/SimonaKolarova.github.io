@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!--Imports-->
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="static/projects.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/7e4ef2c42c.js" crossorigin="anonymous"></script>
+        
+        <!--Title-->
+        <title>SK Project: Phase behaviour predictive modelling</title>
+    </head>
+    <body data-spy="scroll" data-offset="70">
+         <!--Side NavBar-->
+        <nav id="navbar-scrollspy" class="navbar navbar-light bg-light flex-column nav-pills sidenav">
+            <a class="navbar-brand" href="index.html">SIMONA KOLAROVA</a>
+            <a class="navbar-brand" href="#item-0">Phase behaviour <br> Predictive modelling</a>
+            <nav class="nav nav-pills flex-column">
+                <a class="nav-link nav-link-large" href="#item-1">Background</a>
+                <a class="nav-link nav-link-large" href="#item-2">The dataset</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-1">Phase diagrams</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-2">Molecular descriptors</a>
+                </nav>
+                <a class="nav-link nav-link-large" href="#item-3">Data preprocessing</a>
+                <a class="nav-link nav-link-large" href="#item-4">Model selection</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-1">ML algorithm</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-2">Number of trees</a>
+                </nav>
+                <a class="nav-link nav-link-large" href="#item-5">Feature selection</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-1">Variable importance</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-2">Genetic algorithm</a>
+                </nav>
+                <a class="nav-link nav-link-large" href="#item-5">Conformal predictions</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-1">Variable importance</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-2">Genetic algorithm</a>
+                </nav>
+            </nav>
+        </nav>
+
+        <!--Scrollspy-->
+        <div data-spy="scroll" data-target="#navbar-scrollspy" data-offset="0" style = "margin-left: 14rem;">
+        
+        <!--Title-->
+        <h1 id ="item-0">Phase behaviour predictive modelling</h1>
+        
+        <!--Introduction-->
+        <h2 id="item-1">Background</h2>
+            <p>
+                Microemulsions are stable dispersions of oil and water in the presence of one or more amphiphiles and possess a number of desirable formulation properties, such as long-term stability, clarity, modifiable viscosity, and ability to solubilize hydrophilic and/or lipophilic materials. 
+                These characteristics make them excellent vehicles for active materials delivery and have fostered their applications in the fields of oil extraction, nanoparticle synthesis, wastewater treatment, enzyme catalysis and cosmetics formulation. 
+                Nonetheless, few commercial food- and drug-grade microemulsions have been developed over the years, which can be mainly attributed to toxicity and biocompatibility issues, stemming from the need to employ high surfactant concentrations and/or cosurfactants to promote microemulsification, and the use of poorly biodegradable hydrocarbons as oils.
+            </p>
+            <p>
+                To advance the development of biocompatible microemulsions, in 
+                <a href = "" target = "_blank">a recent publication</a> 
+                we explored the microemulsification of systems stabilised by the food/drug-grade lipid soybean phosphatidylcholine (SPC) and incorporating solely generally regarded as safe (GRAS) nonaqueous solvents.
+                The ability of such nonaqueous SPC-stabilised mixtures to form microemulsions was found to be strongly influenced by the properties of both the polar solvent (PS) and the oil, <i>i.e.</i>, the non-polar solvent (NPS), employed. 
+                However, identifying biocompatible solvents, which are capable of supporting the desired SPC nanostructures, is an expensive and experimentally demanding process and can significantly hinder the future applications of the systems.
+            </p>
+            <p>
+                To reduce the time and cost associated with microemulsion component selection,the aim of our study is to develop a machine learning model capable of reliably predicting the formation of microemulsions in ternary nonaqueous systems stabilised by SPC and employing a variety of PS and NPS.
+            </p>
+        <!--Dataset-->
+        <h2 id = "item-2">The dataset</h2>
+        <h3 id = "item-2-1">Phase diagrams</h3>
+        <p>
+            The experimentally obtained partial phase diagrams of twenty-eight systems employing soybean phosphatidylcholine (SPC) as the surfactant, one of eleven polar solvents (PS) and one of fourteen nonpolar solvent (NPS) at room temperature was used for the development of a phase behaviour predictive model 
+            (see 
+            <a href = "" target = "_blank">recent publication</a> 
+            for experimental details of phase behaviour determination).
+        </p>
+        <p>
+            To obtain suitable input data, the partial phase diagrams were summarised by plotting each phase diagram on a ternary plot (where each corner represents a single component’s weight as a fraction of the total mixture weight (w/w)) and overlaying it with a triangular grid of 0.025 w/w spacing. 
+            All resulting vertex points in the investigated phase diagram area, i.e., 407 vertices per phase diagram, were described using the composition of the corresponding mixtures (<i>i.e.</i>, PS type, NPS type, SPC concentration, PS concentration and NPS concentration) and their experimentally observed phase behaviour (<i>i.e.</i>, microemulsion or non-microemulsion, the latter of which encompasses liquid crystalline, macroemulsion and non-homogeneous phases, among others).
+            This phase behaviour representation provided a well-balanced dataset, in which 5407 (47.4%) and 5989 (52.6%) datapoints were classified as microemulsions and non-microemulsions, respectively.
+        </p>
+        <p>
+         Additionally, datapoints were assigned as boundary if they neighboured one or more datapoints of opposite phase behaviour. 
+        </p>
+        <p>
+            <a href= "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Raw%20phase%20behaviour%20data/Phase%20behaviour%20(2.5%20pc%20step)/Data" target= "_blank"><i class="fas fa-database"></i> Dataset</a> &nbsp;&nbsp;&nbsp;
+            <a href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/blob/master/Raw%20phase%20behaviour%20data/Phase%20behaviour%20(2.5%20pc%20step)/Phase%20diagrams%20plotting.ipynb" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Plotted phase diagrams.html", height = "440rem">
+        
+        <h3 id = "item-2-2">Molecular descriptors</h3>
+        <p>
+            Since altering both the PS and NPS employed in the systems can have a significant impact on their phase behaviour, a range of structural and physico-chemical descriptors for the PS and NPS was obtained and used in subsequent phase behaviour predictive modelling steps.
+        </p>
+        <p>
+            For this purpose, the lowest energy molecular conformation of each solvent was determined in HyperChem using a HyperMM+ molecular mechanics force field and a Polak-Ribiere conjugate gradient. 
+            The three-dimensional solvent structures were then used as input in the Dragon and PaDeL molecular descriptor generators to obtain a range of constitutional, topological, geometrical, connectivity, functional group, fingerprint and molecular properties descriptors for each solvent. 
+            Additionally, the molecular weight, octanol/water partition coefficient, hydrogen bond donor and hydrogen bond acceptor counts were obtained from PubChem, the molecular volume was calculated using supplier-provided density data and the amphiphilic moment (AM) was calculated using a purpose-developed in-house software.
+        </p>
+        <p>
+            A total of 2702 molecular descriptors were obtained for each solvent.
+        </p>
+        <!--Data preprocessing-->
+        <h2 id = "item-3">Data preprocessing</h2>
+        <p>
+            First, the dataset (28 phase diagrams) was separated into a training subset of 21 phase diagrams (75% of the datapoints) and a hold-out validation subset of 7 phase diagrams (25% of the datapoints).
+            To evaluate the generalisation abilities of the models when a new PS and/or NPS is employed in the nonaqueous systems, the validation subset phase diagrams were selected to represent a range of prediction scenarios, <i>i.e.</i>, three of the phase diagrams employed a NPS previously unseen by the models, two – a previously unseen PS and two more – both a previously unseen PS and NPS.
+        </p>
+        <p>
+            Preprocessing of the solvent molecular descriptors was performed on the training dataset and replicated on the validation dataset. The PS and NPS molecular descriptors were preprocessed separately by: 
+            <ul>
+                <li> removing missing data, </li>
+                <li> removing descriptors of zero and near-zero variance, </li>
+                <li> transforming descriptors to reduce skewness, </li>
+                <li> centring and scaling all descriptors, </li>
+                <li> removing co-linear descriptors. </li>
+            </ul>
+            The final number of molecular descriptors for polar solvents was 34 and for non-polar solvents: 24.
+        <p>
+            The embedded R Markdown output below shows the preprocessing steps taken.
+        </p>
+        <p>
+            <a href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Solvent%20descriptors%20preprocessing" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Descriptors-preprocessing.html", height = "440rem">
+        <!--Model selection-->
+        <h2 id = "item-4">Model selection</h2>
+        <h3 id = "item-4-1">Selection of machine learning algorithm</h3>
+        <p>
+            To model the relationship between the phase behaviour of the systems and the independent variables (system composition and solvent descriptors), four different classification predictive models, <i>i.e.</i>, logistic regression (LR), random forest (RF), support vector machine (SVM) and neural networks (NN), were employed. 
+            (Additionally, other classification algorithms were also trained and evaluated but not included in the comparisson below, <i>i.e.</i>, linear discriminant analysis, Naïve Bayes algorithm, K-nearest neighbour algorithm, classification trees, rule-based models, stochastic gradient boosting algorithm and support vector machines (linear kernel).) 
+            </p>
+            <p>
+            All models were trained and assessed using the R Classification and Regression training package <i>caret</i>.
+            Each ML models was trained 20 times using a randomly selected 70% of the training phase behaviour dataset, <i>i.e.</i>, repeatedly resampled. 
+            The optimum values for the tuned model parameter were determined for each of the 20 models via a 10-fold cross-validation resampling technique. 
+            The performance of the four ML models for the training and hold-out validation phase diagrams was separately determined using a range of performance metrics averaged over the 20 resampled models. Specifically, the following model performance metrics were calculated: sensitivity, specificity, precision accuracy, harmonic mean of precision and sensitivity (F-score). 
+            Additionally, the Kappa statistic was computed to assess the agreement between the observed and expected model accuracies, and the area under the receiver operating characteristic (ROC) curve (AUC) was calculated to determine the aggregated classification performance of the models. 
+            The mean AUC values was used to select the model of highest prediction and generalisation abilities.
+        </p>
+        <p>
+            The random forest algorithm was observed to have a statistically significantly better predictive performance on both the testing and validation datasets than the Logistic regression, Support vector machines or Neural network models and, hence, was carried forward.
+        </p>
+        <p>
+            <a href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Model%20selection" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Model-selection.html", height = "440rem">
+        <h3 id = "item-4-2">Selection of number of trees in random forest model</h3>
+        <p>
+            Next, the effect of the number of trees in the structure of the random forest model on the predictive performance of the algorithm was evaluated. 
+            For this purpose, eight types of random forest models (employing 1, 5, 10, 50, 100, 500, 1000 or 5000 trees) were each trained 10 times using 70% of the training phase behaviour subset (i.e., repeatedly resampled) and the optimum values for the tuned model parameter (i.e., number of predictors used to train each tree) were determined for each of the 10 models via a 10-fold cross-validation resampling technique. 
+        </p>
+        <p>
+            As above, the performance of the models for the training and hold-out validation data was separately evaluated using a range of performance metrics averaged over the 10 resampled models and the mean AUC values were used to select the model of optimum prediction/generalisation abilities and computational demand.
+        </p>
+        <p>
+            The selected structure for random forest models had 50 trees.
+        </p>
+        <p>
+            <a href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Number%20of%20trees%20selection" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Random-forest---number-of-trees-selection.html", height = "440rem">
+        <h2 id = "item-5">Feature selection</h2>
+        <h3 id = "item-5-1">Selection based on variable importance</h3>
+    </div>
+    </body>
+</html>
