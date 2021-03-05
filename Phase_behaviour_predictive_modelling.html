@@ -129,19 +129,20 @@
         <h3 id = "item-4-1">Selection of machine learning algorithm</h3>
         <p>
             To model the relationship between the phase behaviour of the systems and the independent variables (system composition and solvent descriptors), four different classification predictive models, <i>i.e.</i>, logistic regression (LR), random forest (RF), support vector machine (SVM) and neural networks (NN), were employed. 
-            (Additionally, other classification algorithms were also trained and evaluated but not included in the comparisson below, <i>i.e.</i>, linear discriminant analysis, Naïve Bayes algorithm, K-nearest neighbour algorithm, classification trees, rule-based models, stochastic gradient boosting algorithm and support vector machines (linear kernel).) 
-            </p>
-            <p>
+            Additionally, other classification algorithms were also trained and evaluated but not included in the comparisson below, <i>i.e.</i>, linear discriminant analysis, Naïve Bayes algorithm, K-nearest neighbour algorithm, classification trees, rule-based models, stochastic gradient boosting algorithm and support vector machines (linear kernel).) 
+        </p>
+        <p>
             All models were trained and assessed using the R Classification and Regression training package <i>caret</i>.
             Each ML models was trained 20 times using a randomly selected 70% of the training phase behaviour dataset, <i>i.e.</i>, repeatedly resampled. 
             The optimum values for the tuned model parameter were determined for each of the 20 models via a 10-fold cross-validation resampling technique. 
-            The performance of the four ML models for the training and hold-out validation phase diagrams was separately determined using a range of performance metrics averaged over the 20 resampled models. Specifically, the following model performance metrics were calculated: sensitivity, specificity, precision accuracy, harmonic mean of precision and sensitivity (F-score). 
+            The performance of the four ML models for the training phase diagrams was quantified using a range of performance metrics averaged over the 20 resampled models. Specifically, the following model performance metrics were calculated: sensitivity, specificity, precision accuracy, harmonic mean of precision and sensitivity (F-score). 
             Additionally, the Kappa statistic was computed to assess the agreement between the observed and expected model accuracies, and the area under the receiver operating characteristic (ROC) curve (AUC) was calculated to determine the aggregated classification performance of the models. 
             The mean AUC values was used to select the model of highest prediction and generalisation abilities.
         </p>
         <p>
-            The random forest algorithm was observed to have a statistically significantly better predictive performance on both the testing and validation datasets than the Logistic regression, Support vector machines or Neural network models and, hence, was carried forward.
+            The random forest algorithm was observed to have a statistically significantly better predictive performance on the testing datasets than the Logistic regression, Support vector machines or Neural network models and, hence, was carried forward.
         </p>
+            
         <p>
             <a href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Model%20selection" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
         </p>
