@@ -1,29 +1,447 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <!--Imports-->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-        <link href="static/cover.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/7e4ef2c42c.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!--Custom-->
+        <link href="static/styles.css" rel="stylesheet">
+        <link href="static/grid.css" rel="stylesheet">
+        <script type= "text/javascript" src="static/toggle.js"></script>        
+        <script type= "text/javascript" src="static/navbar.js"></script>   
+
+        <!--Title and favicon-->
         <title>Simona Kolarova's Portfolio</title>
+        <link rel="shortcut icon" type="image/jpg" href="static/images/Logo.png"/>
     </head>
-    <body class="text-center">
-        <!--Headings-->
-        <div class="cover-heading">SIMONA KOLAROVA</div>
-        <!--Contacts-->
-        <div style="text-align: center; margin-bottom: 8rem;">
+
+    <body data-spy="scroll">
+        
+    <!--Navigation bar-->
+    <nav id="navbar-scrollspy" class="navbar fixed-top navbar-expand-lg navbar-light outset nav-bckg">
+        <a class="navbar-brand navbar-main" href="index.html">SIMONA KOLAROVA</a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link navbar-sub active" href="#projects">PROJECTS</a>
+            <a class="nav-item nav-link navbar-sub" href="#skills">TECHNICAL SKILLS</a>
+            <a class="nav-item nav-link navbar-sub" href="#courses">COURSES</a>
+            <a class="nav-item nav-link navbar-sub" href="#about_me">ABOUT ME</a>
+        </div>
+    </nav>
+
+    <!--Scrollspy-->
+    <div data-spy="scroll" data-target="#navbar-scrollspy">
+
+    <!--Cover-->
+    <div id = "cover" class= "cover">
+        <div class="cover-heading">SIMONA <br> KOLAROVA</div>
+        <div class ="cover-buttons-group">
             <a href = "https://www.linkedin.com/in/simona-kolarova-429aa996/" target=”_blank” class="fab fa-linkedin fa-3x cover-buttons"></a>
             <a href = "https://github.com/SimonaKolarova" target=”_blank” class="fab fa-github-square fa-3x cover-buttons"></a>
             <a href = "mailto:simona.h.kolarova@gmail.com" class="fas fa-envelope-square fa-3x cover-buttons"></a>
         </div>
-        <!--Navigation-->
-        <div class="btn-group" role="group" style="text-align: center; margin-bottom: 50px;">
-            <a class="cover-links" href= "data_science.html">DATA SCIENCE</a>
-            <a class="cover-links" href="physical_chemistry.html">PHYSICAL CHEMISTRY</a>
-            <a class="cover-links" href="about_me.html">ABOUT ME</a>
+    </div>    
+    <p style="text-align: center;"><a href="#projects"><i class="fas fa-chevron-down fa-3x cover-scroll-button"></i></a></p>
+    
+    <!--Projects-->
+    <div id ="projects" class="section">
+        <h1>PROJECTS</h1>
+        <div class="grid">
+            <!--Phase behaviour predictive modelling-->
+            <div class="block">
+                <div class="grid-image rounded">
+                    <img src="static/images/Phase behaviour prediction.JPG" alt="phase behaviour prediction">
+                </div>
+                <div class="content">
+                    <header>
+                        <h4 class="grid-header">Phase behaviour predictive modelling</h4>
+                    </header>
+<!---->             <p class="grid-description">Description.</p>
+<!---->             <a href= "" target= "_blank" class="buttons grid-links"><i class="fas fa-book-open"></i> Project</a>
+<!---->             <a href= "" target= "_blank" class="buttons grid-links"><i class="fab fa-github-square"></i> Github</a>
+                </div>
+            </div> 
+            <!--Traffic roadsigns classification-->
+            <div class="block">
+                <div class="grid-image rounded">
+                    <img src="static/images/Traffic.png" alt="Roadsigns">
+                </div>
+                <div class="content">
+                    <header>
+                        <h4 class="grid-header">Traffic roadsigns classification</a></h4>
+                    </header>
+                    <p class="grid-description" style="text-align:justify">A <i>Python Tensorflow Keras</i> convolutional neural network for the classification of German traffic roadsign photos into 43 categories. </p>
+                    <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Traffic" target= "_blank" class="buttons grid-links"><i class="fab fa-github-square"></i> Github</a>                   
+<!---->             <a href= "" target= "_blank" class="buttons grid-links"><i class="fas fa-book-open"></i> Project</a>
+
+                </div>  
+            </div>
+            <!--Antimicrobial resistance-->
+            <div class="block">
+                <div class="grid-image rounded">
+                    <img src="static/images/antimicrobial.JPG" alt="Antimicrobial resistance">
+                </div>
+                <div class="content">
+                    <header>
+                        <h4  class="grid-header">Antimicrobic resistance accross the EU - visualisation</h4>
+                    </header>
+                    <p class="grid-description">Description.</p>
+<!---->             <a href= "mechanism_of_action.html" target= "_blank" class="buttons grid-links"><i class="fas fa-book-open"></i> Project</a>
+<!---->             <a href= "" target= "_blank" class="buttons grid-links"><i class="fab fa-github-square"></i> Github</a>
+                </div>
+            </div>
+            <!--GJB2 gene mutation probability-->
+            <div class="block">
+                <div class="grid-image rounded">
+                    <img src="static/images/gene1.jpg" alt="sotck_portfolio">
+                </div>
+                <div class="content">
+                    <header>
+                        <h4 class="grid-header">GJB2 gene mutation probability</a></h4>
+                    </header>
+                    <p class="grid-description" style="text-align:justify"> 
+                        A Bayesian network <i>Python</i> model calculating the probabilities for a person to carry none, one or two mutated versions of the GJB2 gene 
+                        (one of the leading causes of hearing impairment in newborns) and to exhibit hearing impariment based on familial trait expressions information.
+                    </p>
+                    <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Heredity" target= "_blank" class="buttons grid-links"><i class="fab fa-github-square"></i> Github</a>                   
+<!---->             <a href= "" target= "_blank" class="buttons grid-links"><i class="fas fa-book-open"></i> Project</a>
+                </div>  
+            </div>
+            <!--Stock portfolio website-->
+            <div class="block">
+                <div class="grid-image rounded">
+                    <img src="static/images/sotck_portfolio.jpg" alt="Stocks">
+                </div>
+                <div class="content">
+                    <header>
+                        <h4 class="grid-header">Stock portfolio website</a></h4>
+                    </header>
+                    <p class="grid-description" style="text-align:justify">Constructed using <i>Python Flask</i>, <i>SQL</i>, <i>HTML</i> and <i>CSS</i>. Users can register and login, 'buy' and 'sell' stocks using real-time stock data, track transactions history and create a portfolio of 'stocks'.</p>
+<!---->             <a href = "https://cs50-trading.herokuapp.com/" target= "_blank" class="buttons grid-links"><i class="fas fa-chart-line"></i> Live Demo</a>
+<!---->             <a href = "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Computer-Science/tree/Python/Finance" target= "_blank" class="buttons grid-links"><i class="fab fa-github-square"></i> Github</a>                   
+                </div>  
+            </div>
+            <!--Question answering snippets-->
+            <div class="block">
+                <div class="grid-image rounded">
+                    <img src="static/images/question.png" alt="stock_portfolio">
+                </div>
+                <div class="content">
+                    <header>
+                        <h4 class="grid-header">Question answering snippets</a></h4>
+                    </header>
+                    <p class="grid-description" style="text-align:justify">A question answering programme built using <i>Python's</i> Natural Language Toolkit (<i>nltk</i>) and employing term frequency and inverse document frequency to provide an answer to a user's question.</p>
+                    <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Snippets" target= "_blank" class="buttons grid-links"><i class="fab fa-github-square"></i> Github</a>                   
+<!---->             <a href= "" target= "_blank" class="buttons grid-links"><i class="fas fa-book-open"></i> Project</a>
+                </div>  
+            </div>
+            <!--Minesweeper solver-->
+            <div class="block">
+                <div class="grid-image rounded">
+                    <img src="static/images/Mine.jpg" alt="Tic-Tac-Toe">
+                </div>
+                <div class="content">
+                    <header>
+                        <h4 class="grid-header">Minesweeper solver</h4>
+                    </header>
+                    <p class="grid-description" style="text-align:justify">An propositional logic AI, which can solve randomly generated <i>Python pygame</i> minesweeper boards.</p>
+<!---->             <a href = "" target= "_blank" class="buttons grid-links"><i class="fas fa-gamepad"></i> Play Game</a>
+                    <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/TicTacToe" target= "_blank" class="buttons grid-links"><i class="fab fa-github-square"></i> Github</a>
+                </div>
+            </div>
+            <!--Tic-Tac-Toe-->
+            <div class="block">
+                <div class="grid-image rounded">
+                    <img src="static/images/Tic-Tac-Toe.jpg" alt="Tic-Tac-Toe">
+                </div>
+                <div class="content">
+                    <header>
+                        <h4 class="grid-header">Tic-Tac-Toe</h4>
+                    </header>
+                    <p class="grid-description" style="text-align:justify">A user <i>vs.</i> AI Tic-Tac-Toe  <i>Python Pygame</i>, which implements an alpha-beta pruned recursive <i>minimax</i> decision algorithm to ensure that the AI plays optimally.</p>
+                    <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/TicTacToe" target= "_blank" class="buttons grid-links"><i class="fab fa-github-square"></i> Github</a>
+<!---->             <a href = "" target= "_blank" class="buttons grid-links"><i class="fas fa-gamepad"></i> Play Game</a>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <hr>
+
+    <!--Skills-->
+    <div id = "skills" class = "section">
+        <h1>TECHNICAL SKILLS</h1>
+        <!--Buttons-->
+        <div class ="toggle-group">
+            <button style="width: 23%;" class="toggle-button btn btn-outline-secondary" data-target="row0">
+                <img src="static/images/data science.png" height = 40 width = 40 alt = "Data handling" style="padding: 5px;"></i><b style="font-size:20px">&nbsp; Data handling</b>
+            </button>
+            <button style="width: 26%;" class="toggle-button btn btn-outline-secondary" data-target="row1">
+                <img src="static/images/connection.png" height = 40 width = 40 alt = "Machine learning" style="padding: 5px;"></i><b style="font-size:20px">&nbsp; Machine learning</b>
+            </button>
+        </div>
+        <div class="toggle-group">
+            <button style="width: 18%;" class="toggle-button btn btn-outline-secondary" data-target="row2">
+                <img src="static/images/Python.png" height = 40 width = 40 alt = "Python" style="padding: 5px;"> <b style="font-size:20px">&nbsp; Python</b>
+            </button>
+            <button style="width: 12%;" class="toggle-button btn btn-outline-secondary" data-target="row3"> 
+                <img src="static/images/R.png" height = 40 width = 40 alt = "R" style="padding: 5px;" > <b style="font-size:20px">&nbsp; R</b>
+            </button>
+            <button style="width: 16%;" class="toggle-button btn btn-outline-secondary" data-target="row4">
+                <img src="static/images/SQL1.png" height = 40 width = 40 alt="SQL" style="padding: 5px;"> <b style="font-size:20px">&nbsp; SQL</b>
+            </button>
+            <button style="width: 28%;" class="toggle-button btn btn-outline-secondary" data-target="row5"> 
+                <img src="static/images/html.png" height = 40 width = 40 alt="C" style="padding: 5px;"> 
+                <img src="static/images/CSS.png" height = 40 width = 40 alt="C" style="padding: 5px;"> 
+                <b style="font-size:20px">&nbsp; HTML / CSS</b>
+            </button>
+            <button style="width: 12%;" class="toggle-button btn btn-outline-secondary" data-target="row6"> 
+                <img src="static/images/c.png" height = 40 width = 40 alt="C" style="padding: 5px;"> <b style="font-size:20px">&nbsp; C</b> 
+            </button> 
+        </div>
+        <!--Cards-->
+        <!--Data-->
+<!----> <div class="dropdown dropdown-card" id="row0" >        
+            <table>
+                <tr>
+                    <td><b>Descriptive data analysis and visualisation</b></td>
+                    <td><a href= "mechanism_of_action.html", target="_blank">"Mechanism of action prediction"</a> project</td>
+                </tr>
+            </table>         
+            <p><b> Data analysis</b>: 
+                descriptive data analysis and visualisation (<i>e.g.</i>, <a href= "mechanism_of_action.html", target="_blank">"Mechanism of action prediction"</a> project), 
+                analyses of variance (one-way ANOVA test, Welch one-way test, Kruskal-Wallis rank sum test, normality and homogeneity of variance tests) and pairwise comparisons (Tukey HSD test, t-test and Wilcoxon test) 
+                (<i>e.g.</i>, <a href="", traget="_blank">Phase behaviour predictive modelling</a> project)
+            </p>
+            <p><b>Data visualisation</b>: </p>
+            <p><b>Data preprocessing</b>: normalisation, skewness transformation (Box-Cox and Yeo-Johnson), missing data handling, descrtiptors of zero and near-zero variance and cross-correlations removal 
+                (<i>e.g.</i>, <a href="", traget="_blank">Phase behaviour predictive modelling</a> project)
+            </p>   
+            <p><b>Database management</b>: </p> 
+        </div>
+        <!--Machine learning-->
+<!----> <div class="dropdown dropdown-card" id="row1" > 
+            <p><b>Search algorithms</b>: 
+                breadth-first and depth-first search (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Degrees%20of%20separation", target="_blank">Degrees of separation</a>),
+                best-first search, 
+                adversarial search (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/TicTacToe", target="_blank">Tic-Tac-Toe</a>), 
+                backtracking search (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Crossword", target="_blank">Crossword generator</a>)
+            </p>
+            <p><b>Supervised learning algorithms</b>: 
+                K-nearest neighbour (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Shopping", target="_blank">Online purchase completion prediction</a>),
+                convolutional neural network (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Traffic   ", target="_blank">Traffic roadsigns classification</a>)
+            </p>
+            <p><b>Unsupervised learning algorithms</b>:</p>
+            <p><b>Reinforcement learning algorithms</b>: Q-learning (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Nim", target="_blank"> AI <i>vs.</i> user Nim game</a>)</p>
+            <p><b>Feature selection algorithms</b>:</p>
+            <p><b>Conformal prediction</b>:</p>
+            <p><b>Language processing</b>: 
+    <!---->         reading level assessment,
+                sentence parsing (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Sentence%20Parser", target="_blank"> Parser</a>),
+                question answering (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Snippets", target="_blank"> Snippets</a>)  
+            </p>
+            <p><b>Probabilistic modelling</b>:
+                Markov chain (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/PageRank", target="_blank">Ranking webpages</a>),
+                Bayesian network (<i>e.g.</i>, <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Heredity", target="_blank">GJB2 gene mutation probability determination</a>) 
+            </p>
+        </div>
+        <!--Python-->
+<!----> <div class="dropdown dropdown-card" id="row2" >
+            <p><b>Basic data analysis packages</b>: <i>NumPy</i>, <i>Pandas</i> </p>
+            <p><b>Data visualisation tools</b>: 
+                <i>Matlotlib</i>,
+                <i>Plotly</i> (<i>e.g.</i>,<a href= "", target="_blank"> Antimicrobial resistance project</a>)
+            </p>
+            <p><b>Machine learning packages</b>: 
+                <i>scikit-learn</i> (<i>e.g.</i>,<a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Shopping" target= "_blank"> `Online purchase completion prediction` project</a>), 
+                <i>TensorFlow Keras</i> (<i>e.g.</i>,<a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Traffic" target= "_blank"> convolutional neural network</a>)
+            </p>
+            <p><b>Natural Language Toolkit (NLTK)</b>: 
+                <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Sentence%20Parser" target= "_blank">sentence parsing</a>,
+                <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python/tree/master/Snippets" target= "_blank"> question answering</a>
+            </p>
+            <p><b>Others</b>: 
+                <i>Flask</i> (<i>e.g.</i>,<a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Computer-Science/tree/Python/Finance" target= "_blank"> Stock portfolio website</a>)
+            </p>
+        </div>
+        <!--R-->
+<!----> <div class="dropdown dropdown-card" id="row3">
+            <p><b>Basic data analysis packages</b>: <i></i> <i></i> </p>
+            <p><b>Data visualisation tools</b>: 
+                <i>ggplot2</i>
+            </p>
+            <p><b>Machine learning packages</b>: 
+                <i>CARET</i>
+            </p>
+            <p><b>Others</b>: 
+                <i></i>
+            </p>
+        </div>
+        <!--SQL-->
+<!----> <div class="dropdown dropdown-card" id="row4" >
+            SQL
+        </div>
+        <!--HTML/CSS-->
+<!----> <div class="dropdown dropdown-card" style = "line-height: 3rem;" id="row5">
+            <b>Good working understanding acquired <i>via</i>:</b>
+            <p class="bullets">&#8226; the development of this personal website; 
+            <p class="bullets">&#8226; and a <a href="https://cs50-trading.herokuapp.com/" target= "_blank">Stock portfolio website</a>.
+        </div>
+        <!--C-->
+<!----> <div class="dropdown dropdown-card" style = "line-height: 3rem;" id="row6">
+            <b>Basic working understanding developed through the completion of various small projects, including: </b>
+            <p class="bullets">&#8226; <a href="https://github.com/SimonaKolarova/CS50-s-Introduction-to-Computer-Science/tree/C/Speller" target= "_blank">a spell-checking programme</a>;</p>
+            <p class="bullets">&#8226; <a href="https://github.com/SimonaKolarova/CS50-s-Introduction-to-Computer-Science/tree/C/Filter" target= "_blank"> a programme applying image filter effects</a>;</p>
+            <p class="bullets">&#8226; <a href="https://github.com/SimonaKolarova/CS50-s-Introduction-to-Computer-Science/tree/C/Recovery" target= "_blank">a JPEG files recovery programme</a>;</p>
+            <p class="bullets">&#8226; <a href="https://github.com/SimonaKolarova/CS50-s-Introduction-to-Computer-Science/tree/C/Elections" target= "_blank">election simulators</a>;</p>
+            <p class="bullets">and <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Computer-Science/tree/C" target= "_blank">others</a>.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="courses" class="section">
+    <!--Courses-->
+        <h1>COURSES</h1>
+        <!--Computer Science for Artificial Intelligence 1.-->
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title grid-header">
+                            <b>Computer Science for Artificial Intelligence:</b><br>
+                            Introduction to Computer Science
+                        </p>
+                        <p class="text-muted">Harvard University (2020)</p>
+                        <p class="card-text">
+                            An eleven-parts introduction to computer science and the art of programming 
+                            covering a variety of topics (<i>e.g.</i>, algorithms, data structures, encapsulation, resource management, security, and software engineering) and 
+                            programming languages (<i>e.g.</i>, <i>C</i>, <i>Python</i>, <i>SQL</i>, <i>HTML</i>, <i>CSS</i>, and <i>JavaScript</i>).
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <a href= "https://cs50.harvard.edu/x/2020/" target= "_blank" class="card-buttons grid-links"><i class="fas fa-info-circle"></i> About the course</a>
+                            <a href= "static/certificates/CS50x.pdf" target= "_blank" class="card-buttons grid-links"><i class="fas fa-award"></i> Certificate</a>
+                            <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Computer-Science" target= "_blank" class="card-buttons grid-links"><i class="fab fa-github-square"></i> Github</a>
+                        </p>                             
+                    </div>
+                </div>
+            </div>
+            <!--Computer Science for Artificial Intelligence 2.-->
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title grid-header"><b>Computer Science for Artificial Intelligence:</b><br>
+                            Introduction to Artificial Intelligence with Python</p>
+                        <p class="text-muted">Harvard University (2020)</p>
+                        <p class="card-text">A seven-part exploration of concepts and algorithms used in modern artificial intelligence
+                            (<i>e.g.</i>, search algorithms, classification, optimization and reinforcement learning) 
+                            and their application to a variety of fields
+                            (<i>e.g.</i>, game-playing engines, handwriting recognition, and machine translation) <i>via</i> the completion of twelve <i>Python</i> assignments.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <a href= "https://cs50.harvard.edu/ai/2020/" target= "_blank" class="card-buttons grid-links"><i class="fas fa-info-circle"></i> About the course</a>
+                            <a href= "static/certificates/CS50AI.pdf" target= "_blank" class="card-buttons grid-links"><i class="fas fa-award"></i> Certificate</a>
+                            <a href= "https://github.com/SimonaKolarova/CS50-s-Introduction-to-Artificial-Intelligence-with-Python" target= "_blank" class="card-buttons grid-links"><i class="fab fa-github-square"></i> Github</a>
+                        <p>
+                    </div>
+                </div>
+            </div>
+            <!--Foundations of Data Analysis-->
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title grid-header"><b>Foundations of Data Analysis</b></p>
+                        <p class="text-muted">The University of Texas at Austin (2016-2017)</p>
+                        <p class="card-text">A two-part twelwe-week introduction to descriptive statistics, data analysis, visualisation and modelling with <i>R</i>.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <a href= "https://courses.edx.org/courses/course-v1:UTAustinX+UT.7.11x+3T2016/course/" target= "_blank" class="card-buttons grid-links"><i class="fas fa-info-circle"></i> About Part 1</a>
+                            <a href= "https://courses.edx.org/courses/course-v1:UTAustinX+UT.7.20x+1T2016/e40867c6134a4731a492e1ab9c5027b3/" target= "_blank" class="card-buttons grid-links"><i class="fas fa-info-circle"></i> About Part 2</a>
+                        <p>
+                    </div>
+                </div>
+            </div>
+            <!--Introduction to Statistics for Researchers-->
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title grid-header"><b>Introduction to Statistics for Researchers</b></p>
+                        <p class="text-muted">King's College London (2016)</p> 
+                        <p class="card-text">A six-week introduction to the fundamentals of popular statistical procedures and their utilisation in the statistics package <i>SPSS</i>.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <i class="fas fa-info-circle"></i> No information available online
+                        <p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr id = "about_me"><br><br>
+
+    <div class="section media">   
+        <div class="media-body" style="text-align:justify">
+            <table>
+                <tr>
+                    <td class="td-about"><h3>ABOUT ME</h3></td>
+                    <td class="td-about"> 
+                        <p class = "description">
+                            I am a driven, adaptable and proactive PhD graduate from King's College London and GlaxoSmithKline with experience in the fields of consumer care, drug delivery and machine learning.
+                            Through my involvement in commercial product development and my higher education I have developed a particular interest for colloid and interface chemistry, formulation science and data-driven problem-solving, along with a set of transferable leadership, team-working and organisational skills.
+                            I am currently looking to expand upon these skills in a challenging, multi-disciplinary environment in the field of data science.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-about"><h3>LANGUAGE SKILLS</h3></td>
+                    <td class="td-about">
+                        <p class = "description">
+                            German - intermediate (<i>Deutsche Sprachdiplom</i> 2010)</p>
+                            <p class = "description">    French - beginner 
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-about"><h3>HOBBIES</h3></td>
+                    <td class="td-about">
+                    <p class = "description">A keen amateur photographer with a
+                        <i class="fas fa-camera-retro cover-buttons"><a href="https://simonahkolarova.myportfolio.com/" target=”_blank” class="link"> small portfolio</a></i>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-about"><h3 style="text-align: left;">GET IN TOUCH</h3></td>
+                    <td class="td-about">
+                        <a href = "https://www.linkedin.com/in/simona-kolarova-429aa996/" target=”_blank” class="fab fa-linkedin fa-3x cover-buttons"></a>
+                        <a href = "mailto:simona.h.kolarova@gmail.com" class="fas fa-envelope-square fa-3x cover-buttons"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>   
+        <img src="static/images/Simona.jpg" width = 250 class="ml-3" style="max-width:50%" alt="Simona Kolarova photo;"> 
+    </div>
+    </div>
+    <div style="text-align: center;">
+        <a href="#cover">
+            <i class="fas fa-chevron-up fa-3x cover-scroll-button">
+                <p style="font-family: Montserrat, sans-serif; font-size: 1rem; text-align: center;">Back to top</p>
+
+            </i>
+        </a>
+    </div>    
+
     </body>
-    <footer class="cover-footer">
-        <br><br><a href="http://www.freepik.com">Background vector by starline / Freepik;</a> 
+    <footer>
+        <a href="http://www.freepik.com">Background vector by starline / Freepik;</a> 
         <a href='https://pngtree.com/so/chart-icons'>Chart icons from pngtree.com</a>
     </footer>
 </html>
