@@ -152,4 +152,12 @@ background-color: #eeeeee;
 }
 
 
-  
+/*Links*/
+.link { 
+    color: #0e82a8;
+    font-style: italic;
+}
+
+.link:hover {
+    color: #1f6075;
+}
