@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!--Imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/7e4ef2c42c.js" crossorigin="anonymous"></script>
+
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+        <!--Custom-->
+        <link href="static/projects.css" rel="stylesheet">
+        <script type= "text/javascript" src="static/projects/Heredity/forms.js"></script>
+
+        <!--Title-->
+        <title>Project: GJB2 gene mutation probability</title>
+        <link rel="shortcut icon" type="image/jpg" href="static/images/Logo.png"/>
+
+    </head>
+    <body data-spy="scroll" data-offset="70">
+        <!--Side NavBar-->
+       <nav id="navbar-scrollspy" class="navbar navbar-light bg-light flex-column nav-pills sidenav">
+           <a class="navbar-brand" href="index.html">SIMONA KOLAROVA</a>
+           <a class="navbar-brand" href="#item-0">GJB2 gene mutation <br> probability</a>
+           <nav class="nav nav-pills flex-column">
+               <a class="nav-link nav-link-large" href="#item-1">Abstract</a>
+               <a class="nav-link nav-link-large" href="#item-2">Background</a>
+               <a class="nav-link nav-link-large" href="#item-3">Bayesian network</a>
+               <a class="nav-link nav-link-large" href="#item-4">Example</a>
+               <a class="nav-link nav-link-large" href="#item-5">Demo version</a>
+               <a class="nav-link nav-link-large" href="#item-6">Sources</a>
+           </nav>
+       </nav>
+
+       <!--Scrollspy-->
+       <div data-spy="scroll" data-target="#navbar-scrollspy" data-offset="0" style = "margin-left: 14rem;">
+       
+       <!--Title-->
+       <h1 id ="item-0">GJB2 gene mutation probability</h1>
+       <p style="text-align: center">
+           <a class="link" href = "https://github.com/SimonaKolarova/GJB2-gene-mutation-probability" target=”_blank”><i class="fab fa-github"></i> Github repository</a>
+       </p>
+       
+       <!--Introduction-->
+       <h2 id="item-1">Abstract</h2>
+           <p>
+            Mutated versions of the GJB2 gene are one of the leading causes of hearing impairment in newborns.
+            In this project I have employed a <a class="link" href = "#item-3" >Bayesian network</a> 
+            to determine the probability distributions of family members to have none, one or two copies of the mutated gene and to exhibit hearing impairment given familial hearing impairment information.
+            </p>
+            <p>
+            An example of input/output dataset is provided <a class="link" href = "#item-4">below</a>, 
+            along with a <a class="link" href = "#item-5">live demo version</a>, 
+            which can calculate the probabilities of GJB2 gene mutation and hearing impairment in user-defined families.
+            </p>   
+
+        <h2 id="item-2">Background</h2>
+        <p><i>Hearing impairment</i></p>
+        <p>
+            Hearing impairment (HI) is the most common congenital sensory impairment, affecting around 1 in 1000 newborns. 
+            Studies report that around 20% of HI cases are syndromic, <i>i.e.</i>, associated with the diagnosis of one of approximately 400 syndromes in which HI is a clinical component, 
+            while the majority of the remaining non-syndromic cases are linked to genetic changes in approximately 100 different genome sites. 
+            Despite the extraordinary heterogeneity of HI, variants of the GJB2 gene have been reported to account for about 50% of the non-syndromic HI cases, which makes GJB2 the gene most frequently associated with this condition.
+        </p>
+        <p><i>GJB2 gene function and mutations</i></p>
+        <p>
+            GJB2 encodes the connexin 26 (CX26) protein, which is a gap-junction protein proposed to maintain homeostasis in the cochlea by transporting potassium away from the hair cells during auditory transduction. 
+            More than 90 different GJB2 mutations have been identified as associated with non-syndromic HI to date. 
+            The prevalence of these pathogenic mutations greatly varies across different populations and has been well documented for the 
+            <a class="link" href="https://doi.org/10.1001/jama.281.23.221" target="_blank">North-western US</a>, 
+            <a class="link" href="https://doi.org/10.1038/sj.ejhg.5200406" target="_blank">European</a>, 
+            <a class="link" href="https://doi.org/10.1016/j.ijporl.2007.02.005" target="_blank">northern Iranian</a>, 
+            <a class="link" href="https://doi.org/10.1016/j.ijporl.2019.109630" target="_blank">Chinese</a>, 
+            <a class="link" href="https://doi.org/10.1007/s10038-008-0342-7" target="_blank">Korean</a> and 
+            <a class="link" href="https://doi.org/10.1038/jhg.2015.82" target="_blank">Japanese</a> 
+            populations, among 
+            <a class="link" href="https://doi.org/10.1086/497996" target="_blank">others</a>.
+            GJB2-associated HI is typically an autosomal recessive trait (<i>i.e.</i>, both copies of the GJB2 gene must have pathogenic mutations), 
+            however, rarer examples of GJB2 mutations have also been described in 
+            <a class="source-link" href="https://doi.org/10.1038/srep34425" target="_blank">families with autosomal dominant HI</a> 
+            (<i>i.e.</i>, only one copy of the GJB2 gene must have pathogenic mutations).
+        </p>
+        <p><i>Carrier frequencies</i></p>
+        <p>
+            Despite the large variety of HI-causing GJB2 mutations and the differences in their prevalence across populations, 
+            <a class="link" href="#item-6">several clinical studies</a> 
+            have estimated the carrier frequency of heterogeneous recessive pathogenic GJB2 mutations in the non-HI general populations to be ~3%. 
+            The carrier frequency for two pathogenic copies of the GJB2 gene (resulting in HI) has been estimated to be around 
+            <a class="link" href="https://doi.org/10.1001/jama.281.23.2211" target="_blank">23 in 100’000,</a> 
+            while the probability of having a single (recessive or dominant) pathogenic GJB2 mutations and HI is around 
+            <a class="link" href="https://doi.org/10.1001/jama.281.23.2211" target="_blank">1.1 in 100’000</a>. 
+            Lastly, the random mutation probability per genome per generation has been estimated to be 
+            <a class="link" href="https://doi.org/10.1126/science.1186802" target="_blank">1.1 in 100'000'000</a>.
+            All probabilities are summarised in the tables below:
+        </p>
+        <table>
+            <tr>
+                <td class = "two-columns-left" style = "width: 43%;">
+                    <table class = "probs_table">
+                        <th class = "probs_table">
+                            Unconditional probability of having pathogenic GJB2 copies
+                        </th>
+                        <tr class = "probs_table">
+                            <td><i>Number of pathogenic GJB2 copies</i></td>
+                            <td><i>Probability</i></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0.96979</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0.02998</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>0.00023</td>
+                        </tr>
+                    </table>
+                </td>
+                <td class = "two-columns-right" style = "width: 56%;">
+                    <table class = "probs_table">
+                        <th class = "probs_table">
+                            Probability of HI given number of pathogenic GJB2 copies
+                        </th>
+                        <tr class = "probs_table">
+                            <td><i>Number of pathogenic GJB2 copies</i></td>
+                            <td><i>HI probability</i></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0.0008</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0.0004</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    <h2 id="item-3">Bayesian network</h2>
+    <p>
+        In this section I create a simplistic model to calculate the probability of a newborn to have 0, 1 or 2 pathogenic GJB2 copies and a hearing impairment (HI) based on the carrier frequencies and HI probabilities summarised above, as well as information about HI in their family.
+        Since few families undergo comprehensive genetic testing, the number of pathogenic GJB2 genes each person in a family caries is typically unknown. 
+        Hence, a probabilistic model, in which the number of pathogenic GJB2 genes is represented by hidden state and the HI trait is modelled as the observable state, would be suitable for inferring the probabilities of interest.
+        A popular model, which can encode the desired structure, is a Bayesian network. A Bayesian network allows for conditional dependencies to be used to calculate probabilities.
+    </p>
+    <p>
+        The general structure of our Bayesian network is shown below, where each family member is a associated with one hidden and one observable variable. The values for these states are interconnected and can be used to infer information about each other, as well as about other family members.        
+        <br>
+        <img src="static/projects/Heredity/Bayesian network.png" alt = "Bayesian network" width = 100%  style = "padding: 1rem;">
+    </p>
+    <h2 id="item-4">Example</h2>
+    <p>
+        To demonstrate the applications of the Bayesian network, 
+        the probability of a child ('Child Two') to have HI was estiamted given that their maternal grandfather ('Grandfather (mother-side)'), maternal aunt ('Sibling (mother-side)') and sibling ('Child One') have HI.
+        The following family tree and familial HI traits were used as input:
+        <br>
+        <img src="static/projects/Heredity/Family input.png" alt = "Bayesian network" width = 100% style = "padding: 1rem;"> 
+    </p>
+    <p>
+        The Bayesian network estimated the probability of the child ('Child Two') to have HI to be approximately 22.5% by assigning the hidden states (number of pathogenic GJB2 mutations) as follows:
+        <br>
+        <img src="static/projects/Heredity/Family output.png" alt = "Bayesian network" width = 100% style = "padding: 1rem;"> 
+    </p>
+    <h2 id="item-5">Demo version</h2>
+    <p>
+        Using the form below you can input a custom family tree and associated HI traits 
+        to calculate the probability distribution for each family members to carry pathogenic GJB2 mutations and exhibit hearing impairment (HI). 
+        <br>
+        The name and HI trait fields are required for the Bayesian network to calculate the desired probabilities, while the parent names can be provided or left blank.
+    </p>
+    <br>
+    <div class="row">
+        <div class="control-group">
+            <div class="controls"> 
+                <form id="heredityForm" role="form" autocomplete="off">
+                    <div class="entry input-group col">
+                        <input id = "name" class="form-control" name="name" type="text" placeholder="Person name (required)" required>
+                        <input id = "mother" class="form-control" name="mother" type="text" placeholder="Name of mother">
+                        <input id = "father" class="form-control" name="father" type="text" placeholder="Name of father">
+                        <select id = "trait" class="form-control" name="trait" required>
+                            <option selected disabled>Select trait…(required)</option>
+                            <option value = "True">Impaired hearing</option>
+                            <option value = "False">No hearing impairment</option>
+                            <option value = "">No information (Calculate)</option>
+                        </select>   
+                        <span class="input-group-btn">
+                            <button class="btn btn-success btn-add" type="button">
+                                <span class="glyphicon glyphicon-plus"><i class="fas fa-plus"></i></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <br>
+                <p style="text-align: right;">Press <i class="fas fa-plus"></i> to add another form field.</p>
+                <br>
+                <button id="formSubmit" type="submit" class="btn btn-secondary submit-btn">Calculate</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="results">
+    </div>
+    <h2 id="item-6">Sources</h2>
+    <p><a class="source-link" href="https://doi.org/10.1016/j.ijporl.2019.109630" target="_blank">
+        <b>Suspension array-based deafness genetic screening in 53,033 Chinese newborns identifies high prevalence of 109 G > A in GJB2.</b> 
+        <i>International Journal of Pediatric Otorhinolaryngology, 2019, 126:109630</i> 
+    </a></p>
+    <p><a class="source-link" href="https://doi.org/10.1038/srep34425" target="_blank">
+        <b>A novel dominant GJB2 (DFNA3) mutation in a Chinese family.</b> 
+        <i>Scientific reports, 2017, 7:34425</i> 
+    </a></p>
+    <p><a class="source-link" href="https://doi.org/10.1038/jhg.2015.82" target="_blank">
+        <b>Carrier frequency of the GJB2 mutations that cause hereditary hearing loss in the Japanese population.</b> 
+        <i>Journal of Human Genetics, 2015, 60:613-617</i> 
+    </a></p>
+    <p><a class="source-link" href="https://doi.org/10.1126/science.1186802" target="_blank">
+        <b>Analysis of Genetic Inheritance in a Family Quartet by Whole-Genome Sequencing.</b> 
+        <i>Science, 2010, 328(5978):636-639</i> 
+    </a></p>
+    <p><a class="source-link" href="https://doi.org/10.1007/s10038-008-0342-7" target="_blank">
+        <b>Carrier frequency of GJB2 (connexin-26) mutations causing inherited deafness in the Korean population.</b> 
+        <i>Journal of Human Genetics, 2008, 53(11-12):1022-1028</i> 
+    </a></p>
+    <p><a class="source-link" href="https://doi.org/10.1016/j.ijporl.2007.02.005" target="_blank">
+        <b>High carrier frequency of the GJB2 mutation (35delG) in the north of Iran.</b> 
+        <i>International Journal of Pediatric Otorhinolaryngology, 2007, 71:863-867</i> 
+    </a></p>
+    <p><a class="source-link" href="https://doi.org/10.1086/497996" target="_blank">
+        <b>GJB2 Mutations and Degree of Hearing Loss: A Multicenter Study.</b> 
+        <i>American Journal of Human Genetics, 2005, 77(6):945-57</i> 
+    </a></p>
+    <p><a class="source-link" href="https://doi.org/10.1038/sj.ejhg.5200406" target="_blank">
+        <b>High carrier frequency of the 35delG deafness mutation in European populations.</b> 
+        <i>European Journal of Human Genetics, 2000, 8:19–23</i> 
+    </a></p>
+    <p><a class="source-link" href="https://doi.org/10.1001/jama.281.23.2211" target="_blank">
+        <b>Carrier Rates in the Midwestern United States for GJB2 Mutations Causing Inherited Deafness.</b> 
+        <i>The Journal of the American Medical Association, 1999, 281(23):2211-2216</i> 
+    </a></p>

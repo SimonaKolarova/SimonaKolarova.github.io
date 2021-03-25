@@ -93,6 +93,11 @@ table {
     padding: 0.5rem;
 }
 
+.probs_table {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+
 /* Side navigation bar*/
 .sidenav {
     width: 16rem;
@@ -142,8 +147,8 @@ background-color: #eeeeee;
 }
 
 .nav-link-small {
-    font-size: 0.8rem;
-    line-height: 1.2rem;
+    font-size: 0.7rem;
+    line-height: 0.7rem;
 }
 
 .nav-link.nav-link-small.active {
@@ -160,4 +165,31 @@ background-color: #eeeeee;
 
 .link:hover {
     color: #1f6075;
+}
+
+.source-link { 
+    color: #0e82a8;
+}
+
+.source-link:hover {
+    color: #1f6075;
+}
+
+/* Forms */
+.entry:not(:first-of-type)
+{
+    margin-top: 1rem;
+}
+
+.glyphicon
+{
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.submit-btn {
+    border: 1px solid;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-left: 1rem;
+    background-color: #0e82a8;
 }
