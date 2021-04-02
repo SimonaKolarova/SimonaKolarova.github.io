@@ -64,8 +64,39 @@ $(function()
             dataType : 'json', // json data
             data : JSON.stringify(data), // post data 
             success : function(result) {
-                console.log(result); // print results in developer tools console 
-                // $('<span></span>').hide().appendTo(form).click().remove();
+                console.log(result) // print results in developer tools console 
+                var resultselement = $('#results'); // The results element
+                var resultContainer = $('.card-deck'); // The card deck element
+                var container = $('.card-deck .container:first'); // The container for each card
+                var containerClone = $(container.clone()) // clone the container to keep as base
+                resultContainer.empty(); //Clear any contents that might exist
+                for (const [personName, value] of Object.entries(result)){ // people
+                    console.log(`${personName}: ${value}`);
+                    var newPerson = $(containerClone.clone()) //Create specific container for each person
+                    currentEntry = newPerson.find('.card:first');
+                    currentEntry.find('.card-header:first').text(personName); //set the name to the card header
+                    for (const [attributeName, attributeValues] of Object.entries(value)) // trait or gene objects
+                    {
+                        console.log(`${attributeName}: ${attributeValues}`);
+                        if (attributeName === 'gene') {
+                            currentEntry = newPerson.find('#gene_2').text('2: ' + attributeValues[2] + '%')
+                            currentEntry = newPerson.find('#gene_1').text('1: ' + attributeValues[1] + '%')
+                            currentEntry = newPerson.find('#gene_0').text('0: ' + attributeValues[0] + '%')
+                        } else if (attributeName === 'trait') {
+                            if (attributeValues['true'] == 100) {
+                                currentEntry = newPerson.find('#trait_true').text('True')
+                            } else if (attributeValues['false'] == 100) {
+                                currentEntry = newPerson.find('#trait_true').text('False')
+                            } else {
+                                currentEntry = newPerson.find('#trait_true').text('True: ' + attributeValues['true']+ '%')
+                                currentEntry = newPerson.find('#trait_false').text('False: ' + attributeValues['false'] + '%')
+                            }
+                        }
+                    }
+                    newPerson.appendTo(resultContainer); // Finally add it to the card deck   
+                }  
+                resultselement.show()            
+                resultContainer.show()
             },
             error: function(xhr, resp, text) {
                 console.log(xhr, resp, text);
@@ -73,4 +104,6 @@ $(function()
         })     
     });
 });
+
+
 

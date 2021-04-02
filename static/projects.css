@@ -41,6 +41,14 @@ h3 {
     font-style: italic;
 }
 
+h4 {
+    padding-top: 1.5rem;
+    padding-bottom:1.3rem;
+    text-align: center;
+    color: #333333;
+    font-size: 1.6rem;
+}
+
 /* Embeded plotly plots*/
 .plots {
     width: 100%;
@@ -192,4 +200,39 @@ background-color: #eeeeee;
     padding: 0.5rem 1rem 0.5rem 1rem;
     margin-left: 1rem;
     background-color: #0e82a8;
+}
+
+/* GJB2 Mutations probability cards */
+
+.container {
+    margin-bottom: 1.5rem;
+}
+
+.card{
+    text-align: center;
+}
+
+.card-header {
+    font-size: 2rem;
+    color: #01577c;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card-body {
+    padding-bottom: 1rem;
+}
+
+.card-title {
+    color: #01577c;
+}
+
+.card-text {
+    color: #333;
+}
+
+.card-border {
+    border-color: #333;
+    border-radius: 0.5rem;
 }

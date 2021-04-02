@@ -203,14 +203,40 @@
                 </form>
                 <br>
                 <p style="text-align: right;">Press <i class="fas fa-plus"></i> to add another form field.</p>
-                <br>
-                <button id="formSubmit" type="submit" class="btn btn-secondary submit-btn">Calculate</button>
+                <button id="formSubmit" type="submit" class="btn btn-secondary submit-btn">Calculate</button><br><br><br>
+
+                <div>
+                    <div id="results" style="display:none">
+                        <h4>Output</h4><hr><br>
+                        <div class="row card-deck" style="display:none">
+                            <div class="container col-sm-4">
+                                <div class="card card-border">
+                                    <div class="card-header">Name here</div>
+                                    <div class="card-block">
+                                        <div class="row">
+                                            <div class="card-body">
+                                                <h6 class="card-title">Hearing impairment trait</h6><hr>
+                                                <p id="trait_true" class="card-text"></p>
+                                                <p id="trait_false" class="card-text"></p>
+                                            </div>
+                                            <div class="card-body">
+                                                <h6 class="card-title">GJB2 gene mutations</h6><hr>
+                                                <p id="gene_0" class="card-text">Gene result here</p>
+                                                <p id="gene_1" class="card-text">Gene result here</p>
+                                                <p id="gene_2" class="card-text">Gene result here</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="results">
-    </div>
+   
     <h2 id="item-6">Sources</h2>
     <p><a class="source-link" href="https://doi.org/10.1016/j.ijporl.2019.109630" target="_blank">
         <b>Suspension array-based deafness genetic screening in 53,033 Chinese newborns identifies high prevalence of 109 G > A in GJB2.</b> 

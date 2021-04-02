@@ -195,13 +195,13 @@ body {
     .dropdown-td-left-3 {
         vertical-align: top;
         padding: 0rem 1rem 0rem 0rem;
-        width: 40%;
+        width: 30%;
     }
 
     .dropdown-td-right-3 {
         vertical-align: top;
         padding: 0rem 0rem 0rem 1rem;
-        width: 60%;
+        width: 70%;
         text-align: left;
     }
 

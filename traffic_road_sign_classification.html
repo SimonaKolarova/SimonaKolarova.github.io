@@ -28,20 +28,15 @@
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-1">Images</a>
                     <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-2">Classes</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-3">Data splitting and preprocessing</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-3">Data splitting</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-4">Data preprocessing</a>
                 </nav>
                 <a class="nav-link nav-link-large" href="#item-3">Convolutional neural network</a>
                 <nav class="nav nav-pills flex-column">
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-1">Initial structure</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-2">Number of convolution/pooling layers</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-3">Size of convolutional layer filters</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-4">Size of pooling layer filters</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-5">Number of hidden layers</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-6">Dropout</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-7">Size of hidden layer</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-8">Number of filters in convolutional layers</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-9">Final structure</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-10">Predictive performance</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-1">General CNN structure</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-2">Model structure tuning</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-3">Selected model - training</a>
+                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-4">Selected model - validation</a>
                 </nav>
             </nav>
         </nav>
@@ -63,7 +58,7 @@
             Nevertheless, 
             <a class="link" href="https://www.vox.com/future-perfect/2020/2/14/21063487/self-driving-cars-autonomous-vehicles-waymo-cruise-uber" target=”_blank”>a number of challenges</a>
             have prevented the wide-spread used of fully autonomous vehicles on the streets. 
-            One such challenge is traffic road signs recognition, which I aim to explore in this project. 
+            One such challenge is traffic road signs recognition, which I aim to explore here. 
         </p>
         <h2 id="item-2">Dataset</h2>
         <p>
@@ -72,28 +67,226 @@
             <a class="link" href="https://benchmark.ini.rub.de/gtsrb_news.html" target=”_blank”>German Traffic Sign Recognition Benchmark (GTSRB)</a>
             was employed. 
         </p>
+        <p>
+            <a class="link" href= "https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/published-archive.html" target= "_blank"><i class="fas fa-database"></i> Dataset</a> &nbsp;&nbsp;&nbsp;
+            <a class="link" href = "" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>
+        </p>
         <h3 id = "item-2-1">Images</h3>
-        <table>
-            <tr>
-                <td class = "two-columns-left">
-                    <p>
-                        The GTSRB dataset was created <i>via</i> extraction and annotation of traffic road sign images from approximately 10 h of driving video footage recorded during the daytime on different road types in Germany. 
-                        The data contain a total of 39’270 images of 1’309 traffic road signs (<i>i.e.</i>, 30 images per road sign) and are representative of the visual appearance of road signs in real-world environments, <i>i.e.</i>, their position, illumination and occlusion vary (examples provided on the right). 
-                        Due to the nature of the data collection method, the size of the traffic sign images ranges between 15 × 15 and 222 × 193 pixels, which includes a 10% margin (of at least 5 pixels) around the traffic sign.
-                    </p>
-                <td class = "two-columns-right"> 
-                    <img src="static/projects/Traffic/Traffic signs.png"  width="300rem">
-                </td>   
-            </tr>
-        </table>
+        <table><tr>
+            <td class = "two-columns-left">
+                <p>
+                    The GTSRB dataset was created <i>via</i> extraction and annotation of traffic road sign images from approximately 10 h of driving video footage recorded during the daytime on different road types in Germany.                        
+                    The data comprise a total of 51’840 images of 1’728 traffic road signs (<i>i.e.</i>, 30 images per road sign) and are representative of the visual appearance of road signs in real-world environments, <i>i.e.</i>, their position, illumination and occlusion vary (examples provided on the right). 
+                </p>
+            <td class = "two-columns-right"> 
+                <img src="static/projects/Traffic/Traffic signs.png"  width="390rem">
+            </td>   
+        </tr></table>
+        <table><tr>
+            <td class = "two-columns-left">
+                <p>
+                    The images are in a Portable Pixel Map (PPM) format and their colours are specified in the RGB format. 
+                    Due to the nature of the data collection method, the aspect ratio of each traffic sign image is not necessarily equal to 1 (<i>i.e.</i>, images are not always square) and their dimensions range between 25 × 25 and 266 × 233 pixels. 
+                    The distribution of these image sizes (larger dimension) is shown on the right.
+                    The violin plots suggest a heavily skewed towards lower resolution images distribution.
+                </p>
+            </td>
+            <td class = "two-columns-right" width = "405rem"> 
+                <embed type="text/html" class="plots" src="static/projects/Traffic/Image_size_counts.html", height="200rem" >
+            </td>   
+        </tr></table>
         <h3 id = "item-2-2">Classes</h3>
         <p>
-            The images are classified into 43 road sign categories as shown below.
+            The images are classified into 43 categories according to the road sign they depict (as shown below).
+            The class frequencies in the dataset are highly imbalanced, with speed limit and other prohibitory traffic road signs being better represented than danger, mandatory and derestriction signs. 
+            This could affect the predictive performance of machine learning models build using the dataset, making them likelier to predict the former rather than the latter road sign types when the provided images are of low quality and/or obstructed.
         </p>
-        <embed type="text/html" class="plots" src="static/projects/Traffic/Class_frequencies.html", height = "440rem">
+        <embed type="text/html" class="plots" src="static/projects/Traffic/Class_counts.html", height = "320rem">
+        <h3 id = "item-2-3">Data splitting</h3>
+        <p>
+            The dataset was split into two subsets, <i>i.e.</i>, a training and validation set, by the dataset providers. 
+            The split was performed using stratified sampling, <i>i.e.</i>, the membership of each image to a road sign category and to a set of road sign images (30 images per road sign) was used to ensure that the relative class distributions are preserved across the two subsets (as can be seen from the plot above) and that road sign images of the same physical road sign are assigned to the same data subset.
+            After data splitting, the validation subset was shuffled to prevent deduction of class membership from other images of the same physical road sign.
+            The resulting training and validation subsets comprised 39’209 (75.6%) and 12’630 (24.4%) images, respectively.
+        </p>
+        <h3 id = "item-2-4">Data preprocessing</h3>
+        <p>
+            The training and validation data were preprocessed in an identical manner.
+            Specifically, all images were rescaled to dimensions of 40 x 40 px, converted to NumPy arrays and their RGB values were normalised.
+        </p>
+        <h2 id="item-2">Convolutional neural network</h2>
+        <h3 id = "item-3-1">General CNN structure</h3>
+        <p>
+            Convolutional neural networks (CNN) are well-estabilished deep learning algorithms suitable for pattern recognition problems, such as the one investigated here. 
+            They generally comprise two substructures: a feature learning and a classification structure 
+            (see diagram below, <a class = "link" href = "https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53", target="_blank">source</a>).
+        </p>
+        <p>
+            The feature learning structure receives preprocessed image data as input and captures the spatial and temporal dependencies in it through the application of relevant filters (<i>i.e.</i>, matrix operators). 
+            Such filters are  commonly convolutional and pooling filters that are applied in an alternating succession. 
+            Convolutional filters extract the high-level features (such as lines, edges and gradient orientations) from the images, while pooling filters extract dominant features that are rotationally and positionally invariant. 
+            Both filter types are characterised by their kernel size (<i>i.e.</i>, matrix dimensions), stride length (<i>i.e.</i>, kernel shift step between matrix operations) and padding (<i>i.e.</i>, dimensions of added image padding pixels), all of which can be modified.
+        </p>
+        <p>
+            The classification structure receives the extracted image features data as input, flattens it out and feeds it into a feed-forward neural network, whose output is backpropagated at each training cycle (<i>i.e.</i>, epoch). 
+            The number of hidden layers and neuron units, as well as the dropout rate (<i>i.e.</i>, the fraction of neurons that are randomly excluded) in this neural network structure can be modified. 
+            Finally, the output layer calculates the probability distribution for each image to belong to each class using a softmax function.
+        </p>
+        <p>
+            <img src="static/projects/Traffic/general CNN.jpg"  width="100%">
+        </p>
 
-        <h3 id = "item-2-3">Data splitting and preprocessing</h3>
-        
+        <h3 id = "item-3-2">Model structure tuning</h3>
+        <table><tr>
+            <td class = "two-columns-left">
+                <p>
+                    For the purposes of this project, the <i>TensorFlow Keras</i> API was employed in the construction and optimisation of a CNN model.
+                </p>
+                <p>
+                    Model parameter tuning was first carried out on the feature learning substructure and then on the classification substructure according to the tuning diagrams shown on the right.
+                    Each model was trained on a randomly selected 75% of the training data and tested on the remainining 25% of the training data.
+                    Training of each model was carried out over 5 epochs and in triplicate (n = 3).
+                </p>
+                <p>
+                    <a class="link" href = "" target= "_blank"><i class="fas fa-code"></i> Python scripts and Jupiter Notebook for this section</a>
+                </p>
+            </td>
+            <td class = "two-columns-right" width = "500rem"> 
+                <img src="static/projects/Traffic/Tuning.png"  width="100%">
+            </td>   
+        </tr></table>
+        <p>
 
+        </p>
+        <p><u>Feature learning structure tuning:</u>
+            The feature learning structure was tuned first by iteratively varrying the number of convolutional/pooling layer pairs, the size of the convolutional and pooling kernels and the number of convolutional layer filters. 
+            For the purpose, the classification structure was kept constant and comprised one flattening layer, one hidden layer of 128 neurons, no dropout layer and a dense output layer with a softmax activation function.
+        </p>
+        <p>
+            The majority of the trained models achieved relatively high prediction accuracy on the training and testing data. 
+            The reproducibility of the prediction performance results appeared to be very good with the average standard deviation for the training and testing data accuracy of a model (n=3) estimated to be 0.005 and 0.009, respectively.
+            Overfitting was generally not observed to be an notable issue. 
+        </p>
+        <p>
+            The overall influence of each tuned parameter on the accuracy of the predictions on the training and testing data is shown below. 
+            The results suggest that the size of the convolutional and pooling kernels had a significant effect on the ability of the CNN to extract relevant image features. 
+            Specifically, a convolutional kernel of 4 x 4 pixels and a max pooling kernel of 2 x 2 pixels appeared to best suited to the problem.
+            Increasing the number of convolutional layer filters (either by increasing the specified number of filters or by increasing the ratio of the number of filters in the second and third layer <i>vs.</i> the first layer) also appeared to generally increase the prediction performance of the CNN.
+            The number of convolutional/pooling layer pairs did not appear to significantly affect the performance of the CNN discussed above.
+        </p>
+        <p>
+            <img src="static/projects/Traffic/Convolutional and pooling layers optimisation.png"  width="100%">
+        </p>
+        <p>
+            Overall, the model of highest prediction performance on both the training and testing data was identified to comprise <i>2 convolutional/pooling layer pairs, a convolutional kernal of size 4 x 4 px, a max pooling kernel of size 2 x 2 px, 64 filters in the first and 128 filters in the second convolutional layer</i>.
+            This model selection agrees well with the results of the influence of each tuning paratmer on the prediction perfromance of the CNN.
+        </p>
+        <p><u>Classification structure tuning:</u>
+            The classification structure was tuned next by iteratively varrying the number of hidden and dropout layers and the number of neurons units.  
+            The feature learning structure was kept constant as defined by the optimum feature learning parameters identified above. 
+        </p>
+        <p>
+            As above, the majority of the trained models achieved relatively high prediction accuracy on the training and testing data and the reproducibility of the prediction performance results appeared to be very good with the average standard deviation for the training and testing data accuracy of a model (n=3) estimated to be 0.005 and 0.009, respectively. 
+            Overfitting was generally not observed to be an notable issue, however, the oposite was common, <i>i.e.</i>, many models achieved higher prediction accuracy on the testing data than on the training data.
+        </p>
+        <p>
+            The overall influence of each tuned parameter on the accuracy of the predictions on the training and testing data is shown below.
+            The results suggest that ...
+        </p>
+        <p>
+            <img src="static/projects/Traffic/Hidden and dropout layers optimisation.png"  width="100%">
+        </p>
+        <p>
+            Overall, the model of highest prediction performance on both the training and testing data was identified to comprise <i>...</i>.
+            This model selection agrees well with the results of the influence of each tuning paratmer on the prediction perfromance of the CNN.
+        </p>
+        <h3 id = "item-3-3">Selected model - training</h3>
+        <p>
+            The selected CNN model for traffic road dign classification had the structure shown below.
+        </p>
+        <p><table class = "model-table">
+            <tr>
+                <th class = "model-td-th">Layer (type)</th>
+                <th class = "model-td-th">Output shape</th>
+                <th class = "model-td-th">Parameters (number)</th>
+            </tr>
+            <tr>
+                <td class = "model-td-th">2D convolutional layer <br> (kernel: 4 x 4 px; padding: same, stride length: 1 px, activation = "relu") </td>
+                <td class = "model-td-th">(None, 40, 40, 64)</td>
+                <td class = "model-td-th">3136</td>
+            </tr>
+            <tr>
+                <td class = "model-td-th">2D max pooling layer <br> (kernel: 2 x 2 px; padding: same, stride length: 1 px)</td>
+                <td class = "model-td-th">(None, 20, 20, 64)</td>
+                <td class = "model-td-th">0</td>
+            </tr>
+            <tr>
+                <td class = "model-td-th">2D convolutional layer <br> (kernel: 4 x 4 px; padding: same, stride length: 1 px, activation = "relu")</td>
+                <td class = "model-td-th">(None, 20, 20, 128)</td>
+                <td class = "model-td-th">131200</td>
+            </tr>
+            <tr>
+                <td class = "model-td-th">2D max pooling layer <br> (kernel: 2 x 2 px; padding: same, stride length: 1 px)</td>
+                <td class = "model-td-th">(None, 10, 10, 128)</td>
+                <td class = "model-td-th">0</td>
+            </tr>
+            <tr>
+                <td class = "model-td-th">Flatten layer</td>
+                <td class = "model-td-th">(None, 12800)</td>
+                <td class = "model-td-th">0</td>
+            </tr>
+            <tr>
+                <td class = "model-td-th">Weight normalized dense layer<br> (256 neurons, activation = "relu")</td>
+                <td class = "model-td-th">-</td>
+                <td class = "model-td-th">-</td>
+            </tr>            
+            <tr>
+                <td class = "model-td-th">Droupout layer <br>(dropout rate = -)</td>
+                <td class = "model-td-th">-</td>
+                <td class = "model-td-th">-</td>
+            </tr>
+            <tr>
+                <td class = "model-td-th">Weight normalized dense layer<br> (256 neurons, activation = "relu")</td>
+                <td class = "model-td-th">-</td>
+                <td class = "model-td-th">-</td>
+            </tr>
+            <tr>
+                <td class = "model-td-th">Droupout layer <br>(dropout rate = -)</td>
+                <td class = "model-td-th">(None, 300)</td>
+                <td class = "model-td-th">0</td>
+            </tr>
+            <tr>
+                <td class = "model-td-th">Weight normalized dense output layer<br> (206 neurons, activation = "sigmoid")</td>
+                <td class = "model-td-th">(None, 43)</td>
+                <td class = "model-td-th">-</td>
+            </tr>
+        </table></p>
+        <table><tr>
+            <td class = "two-columns-left">
+                <p>
+                    The optimum number of epochs (<i>i.e.</i>, training cycles) to train the structure was explored last. 
+                    For the purpose, the training and testing accuracy over 30 epochs were compared in the line plot on the right.
+                    The results suggest that the optimum number of epochs for the structure to learn the traffic road sign data is ...
+                    Finally, the selected model was trained using all the training data for ... epochs to achieve a accuracy of prediction on the training data of ...
+                </p>
+            </td>
+            <td class = "two-columns-right" width = "300rem"> 
+                <img src="static/projects/Traffic/epochs.png"  width="100%">
+            </td>   
+        </tr></table>
+
+        <h3 id = "item-3-4">Selected model - validation</h3>
+        <p>
+            To validate the CNN model, the previously unseen by the model validation data set was employed. 
+            The prediction accuracy of the model on the data was determined to be ...
+            The confusion matrix of the results is shown below.
+            The results suggest that the model is excellent at distinguishing the general traffic road sign cathegory (<i>i.e.</i>, profibitory <i>vs.</i> danger <i>vs.</i> mandatory <i>etc.</i>) 
+            but cannot always accurately identify 
+            Nevertheless, its accuracy is comparable to that of humans on the same validation set, which was 
+            <a class = "link" href = "https://doi.org/10.1016/j.neunet.2012.02.016", target="_blank">reported</a> 
+            to be 98.8% on average and 99.2% for the best individual.
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/Traffic/Confusion matrix.html", height = "920rem">
+        </div>
     </body>
 </html>
