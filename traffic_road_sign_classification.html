@@ -47,7 +47,7 @@
         <!--Title-->
         <h1 id ="item-0">Traffic Road Signs Classification</h1>
         <p style="text-align: center">
-            <a class="link" href="https://github.com/SimonaKolarova/Traffic-road_signs-classification" target=”_blank”><i class="fab fa-github"></i> Github repository</a>
+            <a class="link" href="https://github.com/SimonaKolarova/Traffic-road-signs-classification" target=”_blank”><i class="fab fa-github"></i> Github repository</a>
         </p>
         
         <!--Introduction-->
@@ -69,7 +69,7 @@
         </p>
         <p>
             <a class="link" href= "https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/published-archive.html" target= "_blank"><i class="fas fa-database"></i> Dataset</a> &nbsp;&nbsp;&nbsp;
-            <a class="link" href = "" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>
+            <a class="link" href = "https://github.com/SimonaKolarova/Traffic-road-signs-classification/blob/main/Dataset%20visualisation/Counts.ipynb" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>
         </p>
         <h3 id = "item-2-1">Images</h3>
         <table><tr>
@@ -130,7 +130,7 @@
         <p>
             The classification structure receives the extracted image features data as input, flattens it out and feeds it into a feed-forward neural network, whose output is backpropagated at each training cycle (<i>i.e.</i>, epoch). 
             The number of hidden layers and neuron units, as well as the dropout rate (<i>i.e.</i>, the fraction of neurons that are randomly excluded) in this neural network structure can be modified. 
-            Finally, the output layer calculates the probability distribution for each image to belong to each class using a softmax function.
+            Finally, the output layer calculates the probability distribution for each image to belong to each class using a normalisation function.
         </p>
         <p>
             <img src="static/projects/Traffic/general CNN.jpg"  width="100%">
@@ -148,7 +148,7 @@
                     Training of each model was carried out over 5 epochs and in triplicate (n = 3).
                 </p>
                 <p>
-                    <a class="link" href = "" target= "_blank"><i class="fas fa-code"></i> Python scripts and Jupiter Notebook for this section</a>
+                    <a class="link" href = "https://github.com/SimonaKolarova/Traffic-road-signs-classification/tree/main/Model%20tunining%2C%20training%20and%20validation" target= "_blank"><i class="fas fa-code"></i> Python scripts and Jupiter Notebook for this section</a>
                 </p>
             </td>
             <td class = "two-columns-right" width = "500rem"> 
@@ -160,45 +160,49 @@
         </p>
         <p><u>Feature learning structure tuning:</u>
             The feature learning structure was tuned first by iteratively varrying the number of convolutional/pooling layer pairs, the size of the convolutional and pooling kernels and the number of convolutional layer filters. 
-            For the purpose, the classification structure was kept constant and comprised one flattening layer, one hidden layer of 128 neurons, no dropout layer and a dense output layer with a softmax activation function.
+            For the purpose, the classification structure was kept consistent and comprised one flattening layer, one hidden layer of 128 neurons, no dropout layer and a dense output layer with a softmax activation function.
+            A total of 117 CNN model structures (n = 3) were explored.
         </p>
         <p>
-            The majority of the trained models achieved relatively high prediction accuracy on the training and testing data. 
-            The reproducibility of the prediction performance results appeared to be very good with the average standard deviation for the training and testing data accuracy of a model (n=3) estimated to be 0.005 and 0.009, respectively.
-            Overfitting was generally not observed to be an notable issue. 
+            The trained machine learning algortihms achieved relatively high prediction accuracy on the training and testing data with an average of 0.96 &#177 0.06 and 0.95 &#177 0.05, respectively.
+            The results were highly reproducible with the average standard deviation in the prediction accuracy of each model structure (n=3) on the training and testing recorded as 0.005 and 0.009, respectively.
+            Overfitting was generally not observed to be a significant issue with the average difference in model prediction accuracy between the training and testing data recorded to be 0.008 &#177 0.011.
         </p>
         <p>
-            The overall influence of each tuned parameter on the accuracy of the predictions on the training and testing data is shown below. 
+            The overall influence of each tuned parameter on the accuracy of the predictions on the training and testing data is illustated below. 
             The results suggest that the size of the convolutional and pooling kernels had a significant effect on the ability of the CNN to extract relevant image features. 
             Specifically, a convolutional kernel of 4 x 4 pixels and a max pooling kernel of 2 x 2 pixels appeared to best suited to the problem.
             Increasing the number of convolutional layer filters (either by increasing the specified number of filters or by increasing the ratio of the number of filters in the second and third layer <i>vs.</i> the first layer) also appeared to generally increase the prediction performance of the CNN.
-            The number of convolutional/pooling layer pairs did not appear to significantly affect the performance of the CNN discussed above.
+            The number of convolutional/pooling layer pairs did not significantly affect the performance of the CNN.
         </p>
         <p>
             <img src="static/projects/Traffic/Convolutional and pooling layers optimisation.png"  width="100%">
         </p>
         <p>
-            Overall, the model of highest prediction performance on both the training and testing data was identified to comprise <i>2 convolutional/pooling layer pairs, a convolutional kernal of size 4 x 4 px, a max pooling kernel of size 2 x 2 px, 64 filters in the first and 128 filters in the second convolutional layer</i>.
-            This model selection agrees well with the results of the influence of each tuning paratmer on the prediction perfromance of the CNN.
+            Overall, the model of highest prediction accuracy on both the training and testing data was identified to comprise <i>2 convolutional/pooling layer pairs, a convolutional kernal of size 4 x 4 px, a max pooling kernel of size 2 x 2 px, 64 filters in the first and 128 filters in the second convolutional layer</i>.
+            This model selection agrees well with the results of the influence of each tuning paratmer on the prediction perfromance of the CNN discussed above.
         </p>
         <p><u>Classification structure tuning:</u>
-            The classification structure was tuned next by iteratively varrying the number of hidden and dropout layers and the number of neurons units.  
-            The feature learning structure was kept constant as defined by the optimum feature learning parameters identified above. 
+            The classification structure was tuned next by iteratively varrying the number of hidden and dropout layers and the number of neuron units.  
+            The feature learning structure used was defined according to the optimum feature learning parameters identified above. 
+            A total of 63 CNN model structures (n = 3) were explored.
         </p>
         <p>
-            As above, the majority of the trained models achieved relatively high prediction accuracy on the training and testing data and the reproducibility of the prediction performance results appeared to be very good with the average standard deviation for the training and testing data accuracy of a model (n=3) estimated to be 0.005 and 0.009, respectively. 
-            Overfitting was generally not observed to be an notable issue, however, the oposite was common, <i>i.e.</i>, many models achieved higher prediction accuracy on the testing data than on the training data.
+            As above, the trained CNN models achieved relatively high prediction accuracy on the training (0.96 &#177 0.05) and testing (0.98 &#177 0.02) data subsets 
+            and the reproducibility of the prediction performance results appeared to be very good with the average standard deviation for the training and testing data accuracy of a model structure (n=3) estimated to be 0.008 and 0.006, respectively. 
+            Overfitting was generally not observed to be an issue, however, the oposite was common, <i>i.e.</i>, a significant number of the CNN models achieved higher prediction accuracy on the testing data than on the training data. 
+            This suggests that the number of training epochs for these more complex model structures was not high enough to achieve optimum model performance and is something to investigate and alter in subsequent itterations of this project. 
         </p>
         <p>
-            The overall influence of each tuned parameter on the accuracy of the predictions on the training and testing data is shown below.
-            The results suggest that ...
+            The overall influence of each tuned parameter on the accuracy of the predictions on the training and testing data is illustrated below.
+            The results suggest that increasing the number of neurons (either by increasing the specified number of neuron units or by increasing the ratio of the number of neurons in the second and third hidden layer <i>vs.</i> the first hidden layer) generally increases the prediction performance of the CNN.
+            Increasing the number of hidden/dropout layer pairs and the dropout rate both appear to negatively affect the perfromance of the models on the training but not the testing data, which is surprising and can likely be attributed to the issue of the low number of epochs used menationed above.
         </p>
         <p>
             <img src="static/projects/Traffic/Hidden and dropout layers optimisation.png"  width="100%">
         </p>
         <p>
-            Overall, the model of highest prediction performance on both the training and testing data was identified to comprise <i>...</i>.
-            This model selection agrees well with the results of the influence of each tuning paratmer on the prediction perfromance of the CNN.
+            Overall, the model of highest prediction performance on both the training and testing data was identified to comprise one flatten layer, <i>one hidden layer of 256 neurons, one dropout layer of dropout rate of 0.125</i> and a softmax activation function output layer.
         </p>
         <h3 id = "item-3-3">Selected model - training</h3>
         <p>
@@ -237,37 +241,30 @@
             </tr>
             <tr>
                 <td class = "model-td-th">Weight normalized dense layer<br> (256 neurons, activation = "relu")</td>
-                <td class = "model-td-th">-</td>
-                <td class = "model-td-th">-</td>
+                <td class = "model-td-th">(None, 256)</td>
+                <td class = "model-td-th">3277056</td>
             </tr>            
             <tr>
-                <td class = "model-td-th">Droupout layer <br>(dropout rate = -)</td>
-                <td class = "model-td-th">-</td>
-                <td class = "model-td-th">-</td>
-            </tr>
-            <tr>
-                <td class = "model-td-th">Weight normalized dense layer<br> (256 neurons, activation = "relu")</td>
-                <td class = "model-td-th">-</td>
-                <td class = "model-td-th">-</td>
-            </tr>
-            <tr>
-                <td class = "model-td-th">Droupout layer <br>(dropout rate = -)</td>
-                <td class = "model-td-th">(None, 300)</td>
+                <td class = "model-td-th">Dropout layer <br>(dropout rate = 0.125)</td>
+                <td class = "model-td-th">(None, 256)</td>
                 <td class = "model-td-th">0</td>
             </tr>
             <tr>
-                <td class = "model-td-th">Weight normalized dense output layer<br> (206 neurons, activation = "sigmoid")</td>
+                <td class = "model-td-th">Weight normalized dense output layer<br> (43 neurons, activation = "softmax")</td>
                 <td class = "model-td-th">(None, 43)</td>
-                <td class = "model-td-th">-</td>
+                <td class = "model-td-th">11051</td>
             </tr>
         </table></p>
         <table><tr>
             <td class = "two-columns-left">
                 <p>
-                    The optimum number of epochs (<i>i.e.</i>, training cycles) to train the structure was explored last. 
-                    For the purpose, the training and testing accuracy over 30 epochs were compared in the line plot on the right.
-                    The results suggest that the optimum number of epochs for the structure to learn the traffic road sign data is ...
-                    Finally, the selected model was trained using all the training data for ... epochs to achieve a accuracy of prediction on the training data of ...
+                    The optimum number of epochs to train the selected structure was explored last. 
+                    For this purpose, the training and testing accuracy over 30 epochs were compared in the line plot on the right.
+                    The results suggest that the optimum number of epochs for the structure to learn the traffic road sign data is approximately 22.
+                </p>
+                <p>
+                    Hence, the selected CNN model was finnally trained using the whole training data subset for 22 epochs. 
+                    The resulting model achieved a very high accuracy for predictions on the training data of <b>0.998</b>.
                 </p>
             </td>
             <td class = "two-columns-right" width = "300rem"> 
@@ -277,14 +274,19 @@
 
         <h3 id = "item-3-4">Selected model - validation</h3>
         <p>
-            To validate the CNN model, the previously unseen by the model validation data set was employed. 
-            The prediction accuracy of the model on the data was determined to be ...
-            The confusion matrix of the results is shown below.
-            The results suggest that the model is excellent at distinguishing the general traffic road sign cathegory (<i>i.e.</i>, profibitory <i>vs.</i> danger <i>vs.</i> mandatory <i>etc.</i>) 
-            but cannot always accurately identify 
-            Nevertheless, its accuracy is comparable to that of humans on the same validation set, which was 
+            To validate the CNN model, the previously not used validation data set comprising 12’630 images was employed. 
+            The prediction accuracy of the model for this data was determined to be relatively high at <b>0.971</b>.
+            Nevertheless, it is still slightly lower than that achieved by individuals on the same validation set, which was 
             <a class = "link" href = "https://doi.org/10.1016/j.neunet.2012.02.016", target="_blank">reported</a> 
-            to be 98.8% on average and 99.2% for the best individual.
+            to be 0.988 on average and 0.992 for the best individual, suggesting there is room for improvement in the machine learning structure in the next project itterations.
+        </p>
+        <p>
+            The confusion matrix for the predicted <i>vs.</i> true traffic road sign classes in the validation dataset is shown below.
+            The results suggest that the majority of misclassifications by the model were made within traffic road sign cathgories, 
+            <i>i.e.</i> the true and predicted traffic road signs belong the the same general cathegory of signs (<i>i.e.</i>, profibitory, danger, mandatory, derestriction <i>etc.</i>) and, hence, have the same shape and general colour scheme, 
+            while unique traffic road signs (such as the stop and yield traffic road signs) were identified with higher than average accuracy.
+            
+
         </p>
         <embed type="text/html" class="plots" src="static/projects/Traffic/Confusion matrix.html", height = "920rem">
         </div>
