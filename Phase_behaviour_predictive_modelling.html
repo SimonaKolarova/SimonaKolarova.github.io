@@ -25,26 +25,23 @@
             <nav class="nav nav-pills flex-column">
                 <a class="nav-link nav-link-large" href="#item-1">Background</a>
                 <a class="nav-link nav-link-large" href="#item-2">The dataset</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-1">Phase diagrams</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-2">Molecular descriptors</a>
-                </nav>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-1">Phase diagrams</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-2-2">Molecular descriptors</a>
                 <a class="nav-link nav-link-large" href="#item-3">Data preprocessing</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-1">Data splitting</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-3-2">Descriptors preprocessing</a>
                 <a class="nav-link nav-link-large" href="#item-4">Model selection</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-1">ML algorithm</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-2">Number of trees</a>
-                </nav>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-1">ML algorithm</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-4-2">Number of trees</a>
                 <a class="nav-link nav-link-large" href="#item-5">Feature selection</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-1">Variable importance</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-2">Genetic algorithm</a>
-                </nav>
-                <a class="nav-link nav-link-large" href="#item-5">Conformal predictions</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-1">Variable importance</a>
-                    <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-2">Genetic algorithm</a>
-                </nav>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-1">Variables importance</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-2">Genetic algorithm</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-3">Systems knowledge</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-5-4">Comparison</a>
+                <a class="nav-link nav-link-large" href="#item-6">Model validation</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-6-1">Unseen data</a>
+                <a class="nav-link nav-link-small ml-3 my-1" href="#item-6-2">Conformal prediction</a>
+
             </nav>
         </nav>
 
@@ -62,21 +59,26 @@
             <p>
                 Microemulsions are stable dispersions of oil and water in the presence of one or more amphiphiles and possess a number of desirable formulation properties, such as long-term stability, clarity, modifiable viscosity, and ability to solubilize hydrophilic and/or lipophilic materials. 
                 These characteristics make them excellent vehicles for active materials delivery and have fostered their applications in the fields of oil extraction, nanoparticle synthesis, wastewater treatment, enzyme catalysis and cosmetics formulation. 
-                Nonetheless, few commercial food- and drug-grade microemulsions have been developed over the years, which can be mainly attributed to toxicity and biocompatibility issues, stemming from the need to employ high surfactant concentrations and/or cosurfactants to promote microemulsification, and the use of poorly biodegradable hydrocarbons as oils.
+                Nonetheless, few commercial food- and drug-grade microemulsions have been developed over the years, which can be mainly attributed to toxicity and biocompatibility issues, stemming from the need to employ high surfactant concentrations and/or cosurfactants to promote microemulsification, as well as the use of poorly biodegradable hydrocarbons as oils.
             </p>
             <p>
                 To advance the development of biocompatible microemulsions, in 
-                <a class="link" style="text-decoration: underline;" href = "" target = "_blank">a recent publication</a> 
+<!---->         <a class="link" style="text-decoration: underline;" href = "" target = "_blank">a recent publication</a> 
                 we explored the microemulsification of systems stabilised by the food/drug-grade lipid soybean phosphatidylcholine (SPC) and incorporating solely generally regarded as safe (GRAS) nonaqueous solvents.
                 The ability of such nonaqueous SPC-stabilised mixtures to form microemulsions was found to be strongly influenced by the properties of both the polar solvent (PS) and the oil, <i>i.e.</i>, the non-polar solvent (NPS), employed. 
                 However, identifying biocompatible solvents, which are capable of supporting the desired SPC nanostructures, is an expensive and experimentally demanding process and can significantly hinder the future applications of the systems.
             </p>
             <p>
-                To reduce the time and cost associated with microemulsion component selection,the aim of our study is to develop a machine learning model capable of reliably predicting the formation of microemulsions in ternary nonaqueous systems stabilised by SPC and employing a variety of PS and NPS.
+                To reduce the time and cost associated with microemulsion component selection, the aim of our study is to develop a machine learning model capable of reliably predicting the formation of microemulsions in ternary nonaqueous systems stabilised by SPC and employing a variety of PS and NPS.
+                <i>This work is currently in preparation for publishing.</i>
             </p>
         <!--Dataset-->
         <h2 id = "item-2">The dataset</h2>
         <h3 id = "item-2-1">Phase diagrams</h3>
+        <p>
+            <a class="link" href= "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Raw%20phase%20behaviour%20data/Data" target= "_blank"><i class="fas fa-database"></i> Dataset</a> &nbsp;&nbsp;&nbsp;
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/blob/master/Raw%20phase%20behaviour%20data/Phase%20diagrams%20plotting.ipynb" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>
+        </p>
         <p>
             The experimentally obtained partial phase diagrams of twenty-eight systems employing soybean phosphatidylcholine (SPC) as the surfactant, one of eleven polar solvents (PS) and one of fourteen nonpolar solvent (NPS) at room temperature was used for the development of a phase behaviour predictive model 
             (see 
@@ -91,15 +93,11 @@
         <p>
          Additionally, datapoints were assigned as boundary if they neighboured one or more datapoints of opposite phase behaviour. 
         </p>
-        <p>
-            <a class="link" href= "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Raw%20phase%20behaviour%20data/Phase%20behaviour%20(2.5%20pc%20step)/Data" target= "_blank"><i class="fas fa-database"></i> Dataset</a> &nbsp;&nbsp;&nbsp;
-            <a class="link" href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/blob/master/Raw%20phase%20behaviour%20data/Phase%20behaviour%20(2.5%20pc%20step)/Phase%20diagrams%20plotting.ipynb" target= "_blank"><i class="fas fa-code"></i> Jupyter Notebook for this section</a>
-        </p>
         <embed type="text/html" class="plots" src="static/projects/PBPM/Plotted phase diagrams.html", height = "440rem">
         
         <h3 id = "item-2-2">Molecular descriptors</h3>
         <p>
-            Since altering both the PS and NPS employed in the systems can have a significant impact on their phase behaviour, a range of structural and physico-chemical descriptors for the PS and NPS was obtained and used in subsequent phase behaviour predictive modelling steps.
+            Since altering both the PS and NPS employed in the systems can have a significant impact on phase behaviour, a range of structural and physico-chemical descriptors for the PS and NPS was obtained and used in subsequent phase behaviour predictive modelling steps.
         </p>
         <p>
             For this purpose, the lowest energy molecular conformation of each solvent was determined in HyperChem using a HyperMM+ molecular mechanics force field and a Polak-Ribiere conjugate gradient. 
@@ -111,9 +109,14 @@
         </p>
         <!--Data preprocessing-->
         <h2 id = "item-3">Data preprocessing</h2>
+        <h3 id = "item-3-1">Data splitting</h3>
         <p>
             First, the dataset (28 phase diagrams) was separated into a training subset of 21 phase diagrams (75% of the datapoints) and a hold-out validation subset of 7 phase diagrams (25% of the datapoints).
             To evaluate the generalisation abilities of the models when a new PS and/or NPS is employed in the nonaqueous systems, the validation subset phase diagrams were selected to represent a range of prediction scenarios, <i>i.e.</i>, three of the phase diagrams employed a NPS previously unseen by the models, two – a previously unseen PS and two more – both a previously unseen PS and NPS.
+        </p>
+        <h3 id = "item-3-2">Molecular descriptors preprocessing</h3>
+        <p>
+            <a class="link" href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Solvent%20descriptors%20preprocessing" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
         </p>
         <p>
             Preprocessing of the solvent molecular descriptors was performed on the training dataset and replicated on the validation dataset. The PS and NPS molecular descriptors were preprocessed separately by: 
@@ -126,52 +129,198 @@
             </ul>
             The final number of molecular descriptors for polar solvents was 34 and for non-polar solvents: 24.
         <p>
-            The embedded R Markdown output below shows the preprocessing steps taken.
-        </p>
-        <p>
-            <a class="link" href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Solvent%20descriptors%20preprocessing" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+            The embedded R Markdown output below details the preprocessing steps taken.
         </p>
         <embed type="text/html" class="plots" src="static/projects/PBPM/Descriptors-preprocessing.html", height = "440rem">
         <!--Model selection-->
         <h2 id = "item-4">Model selection</h2>
         <h3 id = "item-4-1">Selection of machine learning algorithm</h3>
         <p>
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Model%20selection/Algorithm%20selection" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <p>
             To model the relationship between the phase behaviour of the systems and the independent variables (system composition and solvent descriptors), four different classification predictive models, <i>i.e.</i>, logistic regression (LR), random forest (RF), support vector machine (SVM) and neural networks (NN), were employed. 
-            Additionally, other classification algorithms were also trained and evaluated but not included in the comparisson below, <i>i.e.</i>, linear discriminant analysis, Naïve Bayes algorithm, K-nearest neighbour algorithm, classification trees, rule-based models, stochastic gradient boosting algorithm and support vector machines (linear kernel).) 
+            Additionally, other classification algorithms were also trained and evaluated but not included in the comparisson below, <i>i.e.</i>, linear discriminant analysis, Naïve Bayes algorithm, K-nearest neighbour algorithm, classification trees, rule-based models, stochastic gradient boosting algorithm and support vector machines (linear kernel).
         </p>
         <p>
             All models were trained and assessed using the R Classification and Regression training package <i>caret</i>.
             Each ML models was trained 20 times using a randomly selected 70% of the training phase behaviour dataset, <i>i.e.</i>, repeatedly resampled. 
             The optimum values for the tuned model parameter were determined for each of the 20 models via a 10-fold cross-validation resampling technique. 
-            The performance of the four ML models for the training phase diagrams was quantified using a range of performance metrics averaged over the 20 resampled models. Specifically, the following model performance metrics were calculated: sensitivity, specificity, precision accuracy, harmonic mean of precision and sensitivity (F-score). 
+            The performance of the four ML models on the training phase diagrams was quantified using a range of performance metrics averaged over the 20 resampled models. Specifically, the following model performance metrics were calculated: sensitivity, specificity, precision, accuracy, harmonic mean of precision and sensitivity (F-score). 
             Additionally, the Kappa statistic was computed to assess the agreement between the observed and expected model accuracies, and the area under the receiver operating characteristic (ROC) curve (AUC) was calculated to determine the aggregated classification performance of the models. 
-            The mean AUC values was used to select the model of highest prediction and generalisation abilities.
+            The mean AUC values were used to select the model of highest prediction and generalisation abilities.
         </p>
         <p>
-            The random forest algorithm was observed to have a statistically significantly better predictive performance on the testing datasets than the Logistic regression, Support vector machines or Neural network models and, hence, was carried forward.
-        </p>
-            
-        <p>
-            <a class="link" href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Model%20selection" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+            The random forest and neural network algorithms were observed to have statistically significantly better predictive performance on the testing datasets than the logistic regression and support vector machines algorithms.
+            Due to the lower computational demand of random forests compared to neural networks, the former was carried forward. 
         </p>
         <embed type="text/html" class="plots" src="static/projects/PBPM/Model-selection.html", height = "440rem">
         <h3 id = "item-4-2">Selection of number of trees in random forest model</h3>
         <p>
-            Next, the effect of the number of trees in the structure of the random forest model on the predictive performance of the algorithm was evaluated. 
-            For this purpose, eight types of random forest models (employing 1, 5, 10, 50, 100, 500, 1000 or 5000 trees) were each trained 10 times using 70% of the training phase behaviour subset (i.e., repeatedly resampled) and the optimum values for the tuned model parameter (i.e., number of predictors used to train each tree) were determined for each of the 10 models via a 10-fold cross-validation resampling technique. 
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Model%20selection/Number%20of%20trees%20selection" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
         </p>
         <p>
-            As above, the performance of the models for the training and hold-out validation data was separately evaluated using a range of performance metrics averaged over the 10 resampled models and the mean AUC values were used to select the model of optimum prediction/generalisation abilities and computational demand.
+            Next, the effect of the number of decision trees in the structure of the random forest model on the predictive performance of the algorithm was evaluated. 
+            For this purpose, eight types of random forest models (employing 1, 5, 10, 50, 100, 500, 1000 or 5000 trees) were each trained 10 times using 70% of the training phase behaviour subset (i.e., repeatedly resampled).
+            The optimum values for the tuned model parameter (<i>i.e.</i>, the number of predictors used to train each tree) were determined for each model <i>via</i>> a 10-fold cross-validation resampling technique. 
         </p>
         <p>
+            As above, the performance of the different model structures on the training data was quantified using a range of performance metrics averaged over the 10 resampled models.
+            The mean AUC values were used to select the model of optimum generalisation abilities and computational demand. 
             The selected structure for random forest models had 50 trees.
-        </p>
-        <p>
-            <a class="link" href = "https://github.com/SimonaKolarova/Non-aqueous-microemulsions/tree/master/Number%20of%20trees%20selection" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
         </p>
         <embed type="text/html" class="plots" src="static/projects/PBPM/Random-forest---number-of-trees-selection.html", height = "440rem">
         <h2 id = "item-5">Feature selection</h2>
-        <h3 id = "item-5-1">Selection based on variable importance</h3>
+        <h3 id = "item-5-1">Variables importance</h3>
+        <p>
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Feature%20selection/Variables%20importance" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <p>
+            In this section, the importance of the different compositional and molecular descriptors in the structure of the selected random forest model comrpising 50 decision trees is assessed.
+            For this purpose, 20 random forest models were trained using a randomly selected 70% of the training phase behaviour subset (i.e., repeatedly resampled) and tuned using a 10-fold cross-validation resampling technique.
+            The scaled variable importance of the predictors for each random forest was determined and averaged over the 20 models.
+        </p>
+        <p>
+            The resulting variables ranking suggests that the three compositional descriptors, <i>i.e.</i>, the concentrations of PS, NPS and SPC, are more important in the random forest structure than any of the solvent molecular descriptors.
+            These findings are not surpring given that the position of the data points in the phase diagrams is defined by these compositional descriptors and it is crucial to the phase behaviour of the mixtures.
+        </p>
+        <p>
+            With the aim of determining the effect of using a subset of the highest importance variables to train the algorithm, 29 random forest model types (n = 10) employing the <i>2x+1</i> highest ranking predictors (where </i>x = 1 - 29</i>) were trained using a randomly selected 70 % of the training phase behaviour subset (i.e., repeatedly resampled) and evaluated on the remaining 30% of the data.
+            The results suggest that employing subsets of compositional and molecular descriptors results in predominantly marginal changes in the predictive performance of the models on both the training and testing data.
+            However, the results also points to the need for improvement in the selection of features used to train the random forest models and suggest that there is potential for gains in the models' generalisation abilities.
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Variable-importance.html", height = "440rem">
+        <h3 id = "item-5-2">Feature selection using a genetic algorithm</h3>
+        <p>
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Feature%20selection/Feature%20selection%20with%20genetic%20algorithm" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <p>
+            To determine whether a reduced number of features could improve the predictive performance of the random forest models, different feature selection algorithms were initially explored. 
+            These incuded both filter and wrapper feature selection techniques, such as univariate filtering and recursive feature elimanition, respectively.
+            Among the different methods used the genetic algortihm for feature selection offered the highest improvement in model performance and is, hence, detailed in this section. 
+        </p>
+        <p>   
+            The genetic algorithm (GA) is a supervised feature selection algorithm, which relies on evolutionary principles of population biology to find the optimum predictor subset. 
+            Specifically, to start with, GA trains and tunes a number of models comprising randomly selected predictor subsets, <i>i.e.</i>, chromosomes, assesses the generalisation abilities of these models, <i>i.e.</i>, their fitness, 
+            and then iteratively employs the chromosomes of highest fitness to obtain new chromosomes through cross-over, <i>i.e.</i>, random exchange of groups of predictor, and mutation, <i>i.e.</i>, random substitution of a single predictors.
+        </p>
+        <p>
+            In this study, the <i>caret</i> package's genetic algorithm function <i>ga</i> was employed to determine the optimum subset of descriptors. 
+            The full training dataset was used in the feature selection process and the random forests' parameters were tuned <i>via</i> a 10-fold cross-validation resampling technique.
+            The algorithm was trained over 250 iterations of 50 chromosomes each and the cross-over and mutation rates were set at 0.8 and 0.1, respectively.
+            The fitness of each model was assessed using a custom function, which accounts both for the model's prediction AUC (the higher the AUC - the higher the model fitness) and the number of predictors employed in the random forest structure (the lower the number of predictors - the higher the model fitness)
+            with the former contributing twice as much as the latter to the fitness estimate.
+        </p>
+        <p>
+            A subset of sixteen features was identified as optimal by the genetic algorithm and the AUC values achieved by the model on training (randomly selected 70% of training data) and testing (remaining 30% of training data) subsets
+            were determined to be 0.9997 &#177; 0.0003 and 0.9656 &#177; 0.0042, respectively (n = 10).
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/GA-feature-selection.html", height = "440rem">
+
+        <h3 id = "item-5-3">Feature selection based on physico-chemical understanding of the systems</h3>
+        <p>
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Feature%20selection/Feature%20selection%20based%20on%20physico-chemical%20knowledge" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <p>
+            Since this predictive modelling project is a part of a larger investigation into the formation and properties of nonaqueous SPC-stabilised systems, 
+            the developed physico-chemical understanding about the influence of the solvents characteristics over the phase behaviour, morphology and interfacial properties of the systems was employed 
+            in selecting a subset of already identified as influential solvent molecular descriptors.
+            These include the compositional descriptors, <i>i.e.</i>, the concentrations of PS, NPS and SPC, which were also identified as the variables of highest importance 
+            <a class = "link" href="#item-5-1">above</a> 
+            and selected by the <a class = "link" href="#item-5-2">genetic algorithm</a>, 
+            the amphiphilic moment, hydrogen donor groups count and molecular volume of the polar solvent (the fromer two of which were also selected by the <a class = "link" href="#item-5-2">genetic algorithm</a>) 
+            and the molecular volume and conjugated carbons count of the non-polar solvent (see <a class="link" style="text-decoration: underline;" href = "" target = "_blank">recent publication</a>).
+        </p>
+        <p>
+            The AUC values achieved by random forest models (n = 10) trained using this subset of 8 features were determined to be 0.9997 &#177; 0.0003 and 0.9664 &#177; 0.0027 on the training (randomly selected 70% of training data) and testing (remaining 30% of training data) subsets, respectively.
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/PCK-feature-selection.html", height = "440rem">
+        <h3 id = "item-5-4">Comparison of feature selection methods</h3>
+        <p>
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Feature%20selection/Comparison%20of%20feature%20selection%20methods" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <p>
+            Finally, the predictive performance of random forest models employing four different predictor sets, 
+            <i>i.e.</i>, all predictor, 35 predictors of highest variable importance (with which the model of highest predictive performance on the training data was obtained 
+            <a class = "link" href="#item-5-1">above</a>), 16 predictors selected by the <a class = "link" href="#item-5-2">genetic algorithm</a> and 8 predictors selected
+            based on <a class = "link" href="#item-5-3">physico-chemical knowledge</a>, was compared. 
+            For this purpose, 20 random forest models were trained using each predictors set and a randomly selected 70% of the training phase behaviour dataset (<i>i.e.</i>, repeatedly resampled) and tuned using a 10-fold cross-validation resampling technique.
+            Their generalization abilities were quantified on the remaining 30% of the training dataset (<i>i.e.</i>, the testing data) and, for the first time, on the hold-out validation data. 
+        </p>
+        <p>
+            The results suggest that employing either of the three reduced sets of predictors does not offer significant predictive performance advantages on the training, testing or validation data compared to the full set of preprocessed predictors.
+            This can be attributed to the intinsic feature selection properties of random forests.
+            Nevertheless, work on identifying a suitable feature subset is still ongoing as preliminary results shown that reducing the features set for this problem can significantly increase the predictive performance of the models (especially on the hold-out validation data).
+        </p>     
+        
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Feature-selection-comparison.html", height = "440rem">
+        <h2 id = "item-6">Model validation</h2>
+        <h3 id = "item-6-1">Predictions on unseen data</h3>
+        <p>
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Model%20validation/Predicting%20unseen%20data" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <p>
+            In this section, the generalisation abilities of the selected random forest model structure to new data are assessed. 
+            For this purpose, 20 random forests were trained using the 21 training phase diagrams and all 61 preprocessed features. 
+            The random forests’ prediction performance on whole hold-out validation dataset comprising 7 phase diagrams was determined. 
+            Additionally, the predictions on the different types of validation phase diagrams (<i>i.e.</i>, phase diagrams of systems comprising a previously unseen polar solvent, non-polar solvent or both) and on the different types of phase behaviour data points (<i>i.e.</i>, data points in the phase diagram boundary or non-boundary region) was explored. 
+        </p>
+        <p>
+            The results suggest that the random forest models identify “non-microemulsion” data points with a higher accuracy, (<i>i.e.</i>, specificity) than “microemulsion” data points (<i>i.e.</i>, sensitivity). 
+            Additionally, the predictive performance of the random forest models is significantly better on data points that are <i>not</i> in the "boundary" region (AUC = 0.899 ± 0.010) than on ones that are (AUC = 0.669 ± 0.005), thereby suggesting that the models generalise the shape of unseen phase diagrams relatively well but are not as well suited to identifying the exact position of the phase boundaries. 
+            Lastly, the results suggest that the predictions on phase diagrams of systems comprising only an unseen non-polar solvent (NPS) are significantly more accurate (AUC = 0.935 ± 0.011) than those on phase diagrams of systems comprising an unseen polar solvent (PS) either in a combination with a seen or unseen NPS (AUC = 0.752 ± 0.017 and 0.796 ± 0.006, respectively), which, in turn, suggests a more complex and difficult to predict influence of PS on the phase behaviour of nonaqeous SPC-stabilised systems (as indeed experimentally observed) and is an area of the project that will be further worked on in the future.            
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Model-validation.html", height = "440rem">
+        <br><br>
+        <p>
+            The validation data predictions obtained with a single random forest model were visualised for each type of validation phase diagram ( (<i>i.e.</i>, phase diagrams of systems comprising a previously unseen polar solvent, non-polar solvent or both) and on the different types of phase behaviour data points (<i>i.e.</i>, data points in the phase diagram boundary or non-boundary region).
+        </p>
+        <p><b><center>Systems comprising unseen polar solvent</center></b></p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Predictions (unseen PS).html", height = "430rem">
+        <p><b><center>Systems comprising unseen non-polar solvent</center></b></p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Predictions (unseen NPS).html", height = "830rem">
+        <p><b><center>Systems comprising unseen polar and non-polar solvents</center></b></p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Predictions (unseen PS and NPS).html", height = "430rem">
+        <h3 id = "item-6-2">Conformal prediction</h3>
+        <p>
+            <a class="link" href = "https://github.com/SimonaKolarova/Phase-behaviour-predictive-modeling/tree/master/Model%20validation/Conformal%20prediction" target= "_blank"><i class="fas fa-code"></i> R project for this section</a>
+        </p>
+        <p>
+            When validating a newly developed model, performance metrics (such as accuracy, sensitivity and specificity) provide a valuable insight into the ability of the model to predict previously seen and unseen data. 
+            Nevertheless, it is also important to offer a measure for the uncertainty of these predictions, thereby allowing the reliable application of the model to new data. 
+            One such confidence estimation framework is conformal prediction (CP), which we employ in this project.
+        </p>
+        <p>   
+            Conformal prediction (CP) can be used in conjunction with any machine learning algorithm to determine the similarity of new datapoints to the training datapoints, <i>i.e.</i>, their nonconformity, and provide an estimate of the reliability of the corresponding predictions. 
+            The nonconformity of each prediction is quantified using a p-value (not to be confused with traditional p-values from statistics), which, in binary classification problems such as the current one, can be denoted as p0 and p1 for each class.
+            A small p-value (close to 1/n, where n is the number of training datapoints), suggests that the new data is very nonconforming, while larger p-values (approaching 1) suggest that the new data is similar to previous examples, <i>i.e.</i>, conforming.
+            To classify the reliability of the predictions, the p-value is employed together with a user-defined confidence level (CL) to assign the following classes: 
+            single class predictions (p0 > (1-CL) and p1 < (1-CL) or p0 < (1-CL)  and p1 > (1-CL)), multiple class (<i>i.e.</i>, ambiguous) predictions (p0 > (1-CL)  and p1 > (1-CL)) or nonconforming predictions (p0 < (1-CL) and p1 < (1-CL)).
+            One advantage of the CP algorithm is its automatic validity, which guarantees that the number of misclassified single class predictions is lower than 1-CL, given that: the prediction dataset is large, the predictions are independent of each other and the class distributions in the training and predicted datasets are comparable.
+        </p>
+            In this study, the R package ‘conformal’ was used to obtain CP for a random forest model trained on all training data and using all 61 preprocessed predictors. 
+            A range of CL (between 0.75 and 0.99) was explored to identify the optimum CL for the problem, namely, the CL, at which the CP is both valid (<i>i.e.</i>, the single class predictions have a higher accuracy than CL) and efficient (<i>i.e.</i>, the largest fraction of single class predictions is obtained).
+            The results suggest that the optimum CL is 0.94, at which the accuracy of single class predictions is 0.951 and the CP efficiency is 0.620.
+        </p>
+        <p>
+            In addition to the random forests’ conformal prediction on whole hold-out validation dataset, 
+            the CP on the different types of validation phase diagrams (<i>i.e.</i>, phase diagrams of systems comprising a previously unseen polar solvent, non-polar solvent or both) and on the different types of phase behaviour data points (<i>i.e.</i>, data points in the phase diagram boundary or non-boundary region) was also explored.  
+            The result suggest that the CP's accuracy and efficiency is significantly higher on data points that are <i>not</i> in the "boundary" region than on ones that are, thereby supporting the 
+            <a class = "link" href="#item-6-1">above suggestion</a> that the models generalise the shape of unseen phase diagrams relatively well but are not as well suited to identifying the exact position of the phase boundaries. 
+            Additionally, the CP on phase diagrams of systems comprising only an unseen non-polar solvent (NPS) were determined to be significantly more accurate and efficient than those on phase diagrams of systems comprising an unseen polar solvent (PS), which, in turn, were sligthly better than those on phase diragrams coprising both an unseen PS and NPS.
+            As <a class = "link" href="#item-6-1">above</a>, these results were attributed to the more complex and difficult to predict influence of PS on the phase behaviour of nonaqeous SPC-stabilised systems and is an area of the project that will be further imrpoved on in the future.            
+        </p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Conformal-prediction.html", height = "440rem">
+        <br><br>
+        <p>
+            Finally, the conformal prediction at the selected confidence level (0.94) were visualised for each type of validation phase diagram ( (<i>i.e.</i>, phase diagrams of systems comprising a previously unseen polar solvent, non-polar solvent or both) and on the different types of phase behaviour data points (<i>i.e.</i>, data points in the phase diagram boundary or non-boundary region).
+        </p>
+        <p><b><center>Systems comprising unseen polar solvent</center></b></p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Conformal prediction (unseen PS).html", height = "430rem">
+        <p><b><center>Systems comprising unseen non-polar solvent</center></b></p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Conformal prediction (unseen NPS).html", height = "830rem">
+        <p><b><center>Systems comprising unseen polar and non-polar solvents</center></b></p>
+        <embed type="text/html" class="plots" src="static/projects/PBPM/Conformal prediction (unseen PS and NPS).html", height = "430rem">
     </div>
     </body>
 </html>
